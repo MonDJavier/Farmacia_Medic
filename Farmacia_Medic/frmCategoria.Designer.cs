@@ -1,7 +1,7 @@
 ﻿
 namespace Farmacia_Medic
 {
-    partial class Form1
+    partial class frmCategoria
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,7 @@ namespace Farmacia_Medic
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCategoria));
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.txtcod = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -46,7 +47,7 @@ namespace Farmacia_Medic
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(136, 194);
+            this.txtBuscar.Location = new System.Drawing.Point(127, 191);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(199, 22);
@@ -54,7 +55,7 @@ namespace Farmacia_Medic
             // 
             // txtcod
             // 
-            this.txtcod.Location = new System.Drawing.Point(112, 63);
+            this.txtcod.Location = new System.Drawing.Point(103, 60);
             this.txtcod.Margin = new System.Windows.Forms.Padding(4);
             this.txtcod.Name = "txtcod";
             this.txtcod.Size = new System.Drawing.Size(31, 22);
@@ -63,7 +64,7 @@ namespace Farmacia_Medic
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(28, 190);
+            this.btnBuscar.Location = new System.Drawing.Point(19, 187);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(100, 28);
@@ -73,7 +74,7 @@ namespace Farmacia_Medic
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(136, 137);
+            this.button3.Location = new System.Drawing.Point(127, 134);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(100, 28);
@@ -83,7 +84,7 @@ namespace Farmacia_Medic
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(244, 137);
+            this.button2.Location = new System.Drawing.Point(235, 134);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 28);
@@ -94,10 +95,10 @@ namespace Farmacia_Medic
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.BackColor = System.Drawing.Color.Black;
             this.label2.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Gold;
-            this.label2.Location = new System.Drawing.Point(26, 18);
+            this.label2.Location = new System.Drawing.Point(19, 6);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(300, 32);
@@ -108,7 +109,7 @@ namespace Farmacia_Medic
             // 
             this.dgvCategoria.BackgroundColor = System.Drawing.Color.Black;
             this.dgvCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCategoria.Location = new System.Drawing.Point(28, 226);
+            this.dgvCategoria.Location = new System.Drawing.Point(19, 223);
             this.dgvCategoria.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCategoria.Name = "dgvCategoria";
             this.dgvCategoria.RowHeadersVisible = false;
@@ -118,7 +119,7 @@ namespace Farmacia_Medic
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(112, 95);
+            this.txtNombre.Location = new System.Drawing.Point(103, 92);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(223, 22);
@@ -127,10 +128,10 @@ namespace Farmacia_Medic
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.BackColor = System.Drawing.Color.Black;
             this.label1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label1.Location = new System.Drawing.Point(28, 99);
+            this.label1.Location = new System.Drawing.Point(19, 96);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 20);
@@ -139,7 +140,7 @@ namespace Farmacia_Medic
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(28, 137);
+            this.button1.Location = new System.Drawing.Point(19, 134);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
@@ -149,7 +150,8 @@ namespace Farmacia_Medic
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(13, 4);
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(4, 1);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(331, 479);
@@ -157,11 +159,11 @@ namespace Farmacia_Medic
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
-            // Form1
+            // frmCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(368, 508);
+            this.ClientSize = new System.Drawing.Size(337, 479);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.txtcod);
             this.Controls.Add(this.btnBuscar);
@@ -173,8 +175,8 @@ namespace Farmacia_Medic
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "frmCategoria";
+            this.Text = "frmCategoria";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategoria)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
