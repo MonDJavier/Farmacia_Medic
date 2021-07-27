@@ -20,9 +20,9 @@ namespace Capa_Datos
         public DAC()
         { //constructor
 
-            this.servidor = "731N37";
-            this.usuario = "usuario1";
-            this.contrasena = "123";
+            this.servidor = "192.168.100.69";
+            this.usuario = "sa";
+            this.contrasena = "12345";
             this.basedatos = "bd_farmacia";
             this.cmdSP = new SqlCommand();
         }
