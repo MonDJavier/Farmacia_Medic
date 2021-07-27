@@ -29,6 +29,7 @@ namespace Farmacia_Medic
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCliente));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btbuscar = new System.Windows.Forms.Button();
             this.bteliminar = new System.Windows.Forms.Button();
@@ -53,10 +54,8 @@ namespace Farmacia_Medic
             this.label2 = new System.Windows.Forms.Label();
             this.dgcliente = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgcliente)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -355,31 +354,21 @@ namespace Farmacia_Medic
             this.label1.TabIndex = 82;
             this.label1.Text = "REGISTRO CLIENTES";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(2, 4);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1144, 567);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 85;
-            this.pictureBox2.TabStop = false;
-            // 
             // frmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1155, 574);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(911, 335);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgcliente);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox2);
             this.Name = "frmCliente";
             this.Text = "frmCliente";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgcliente)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -411,6 +400,5 @@ namespace Farmacia_Medic
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgcliente;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

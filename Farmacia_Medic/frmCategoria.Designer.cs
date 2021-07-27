@@ -154,7 +154,7 @@ namespace Farmacia_Medic
             this.pictureBox1.Location = new System.Drawing.Point(4, 1);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(331, 479);
+            this.pictureBox1.Size = new System.Drawing.Size(344, 479);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
@@ -163,7 +163,7 @@ namespace Farmacia_Medic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(337, 479);
+            this.ClientSize = new System.Drawing.Size(350, 479);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.txtcod);
             this.Controls.Add(this.btnBuscar);
