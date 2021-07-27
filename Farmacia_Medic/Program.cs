@@ -16,7 +16,7 @@ namespace Farmacia_Medic
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmBuscarCliente());
+            Application.Run(new presentacion() );
         }
     }
 }
