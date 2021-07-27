@@ -77,9 +77,8 @@ namespace Capa_Negocio
                 PrepararSP("insertarCliente");
                 AddParametro("@nombre", nombre);
                 AddParametro("@paterno", paterno);
-                AddParametro("@materno", materno);
-                AddParametro("@usuario"), usuario;
-                AddParametro("@contraseña"), contraseña;
+                AddParametro("@usuario", usuario);
+                AddParametro("@contraseña", contraseña);
                 AddParametro("@telefono", telefono);
                 AddParametro("@direccion", direccion);
                 AddParametro("@correo", correo);

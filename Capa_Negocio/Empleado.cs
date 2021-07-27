@@ -82,8 +82,8 @@ namespace Capa_Negocio
                 AddParametro("@nombre", this.nombre);
                 AddParametro("@paterno", this.paterno);
                 AddParametro("@materno", this.materno);
-                AddParametro("@usuario"), usuario;
-                AddParametro("@contraseña"), contraseña;
+                AddParametro("@usuario", this.usuario);
+                AddParametro("@contraseña", this.contraseña);
                 AddParametro("@telefono", this.telefono);
                 AddParametro("@direccion", this.direccion);
                 ejecutarSP();
