@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using BRL;
+
 namespace Farmacia_Medic
 {
     public partial class frmBuscarCliente : Form

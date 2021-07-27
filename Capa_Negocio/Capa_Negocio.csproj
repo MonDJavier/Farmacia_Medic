@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4DF83061-57A2-43E1-9E7C-B711A83D11AB}</ProjectGuid>
+    <ProjectGuid>{193C22AC-2AFB-4211-9CC0-D5EFC3677060}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Capa_Negocio</RootNamespace>
     <AssemblyName>Capa_Negocio</AssemblyName>
@@ -46,7 +46,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ajuste.cs" />
+    <Compile Include="busqueda.cs" />
+    <Compile Include="categoria.cs" />
+    <Compile Include="Cliente.cs" />
+    <Compile Include="Compra.cs" />
+    <Compile Include="detalleAjuste.cs" />
+    <Compile Include="detalleCompra.cs" />
+    <Compile Include="detalleVenta.cs" />
+    <Compile Include="Empleado.cs" />
+    <Compile Include="laboratorio.cs" />
+    <Compile Include="medicamento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="proveedor.cs" />
+    <Compile Include="venta.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -67,7 +80,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <ProjectReference Include="..\Capa_Datos\Capa_Datos.csproj">
+      <Project>{46867829-534c-481a-8b73-63dcfda1ae7a}</Project>
+      <Name>Capa_Datos</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
