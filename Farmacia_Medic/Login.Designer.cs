@@ -64,10 +64,9 @@ namespace Farmacia_Medic
             this.panel1.Controls.Add(this.btn_log);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txt_nomlog);
-            this.panel1.Location = new System.Drawing.Point(3, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(499, 413);
+            this.panel1.Size = new System.Drawing.Size(374, 336);
             this.panel1.TabIndex = 8;
             // 
             // lblHora
@@ -76,10 +75,9 @@ namespace Farmacia_Medic
             this.lblHora.BackColor = System.Drawing.Color.Transparent;
             this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHora.ForeColor = System.Drawing.Color.Gold;
-            this.lblHora.Location = new System.Drawing.Point(133, 344);
-            this.lblHora.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHora.Location = new System.Drawing.Point(100, 280);
             this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(21, 20);
+            this.lblHora.Size = new System.Drawing.Size(20, 17);
             this.lblHora.TabIndex = 11;
             this.lblHora.Text = "...";
             // 
@@ -89,10 +87,9 @@ namespace Farmacia_Medic
             this.lblFecha.BackColor = System.Drawing.Color.Transparent;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFecha.ForeColor = System.Drawing.Color.Gold;
-            this.lblFecha.Location = new System.Drawing.Point(366, 344);
-            this.lblFecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFecha.Location = new System.Drawing.Point(274, 280);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(21, 20);
+            this.lblFecha.Size = new System.Drawing.Size(20, 17);
             this.lblFecha.TabIndex = 10;
             this.lblFecha.Text = "...";
             // 
@@ -102,10 +99,9 @@ namespace Farmacia_Medic
             this.lbl.BackColor = System.Drawing.Color.Transparent;
             this.lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl.ForeColor = System.Drawing.Color.Red;
-            this.lbl.Location = new System.Drawing.Point(69, 344);
-            this.lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl.Location = new System.Drawing.Point(52, 280);
             this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(56, 20);
+            this.lbl.Size = new System.Drawing.Size(48, 17);
             this.lbl.TabIndex = 9;
             this.lbl.Text = "Hora:";
             // 
@@ -115,10 +111,9 @@ namespace Farmacia_Medic
             this.label.BackColor = System.Drawing.Color.Transparent;
             this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label.ForeColor = System.Drawing.Color.Red;
-            this.label.Location = new System.Drawing.Point(292, 344);
-            this.label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label.Location = new System.Drawing.Point(219, 280);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(66, 20);
+            this.label.Size = new System.Drawing.Size(57, 17);
             this.label.TabIndex = 8;
             this.label.Text = "Fecha:";
             // 
@@ -127,21 +122,19 @@ namespace Farmacia_Medic
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label4.Location = new System.Drawing.Point(47, 111);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(35, 90);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 17);
+            this.label4.Size = new System.Drawing.Size(57, 13);
             this.label4.TabIndex = 7;
             this.label4.Text = "NOMBRE:";
             // 
             // txt_psslog
             // 
             this.txt_psslog.BackColor = System.Drawing.Color.White;
-            this.txt_psslog.Location = new System.Drawing.Point(163, 165);
-            this.txt_psslog.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_psslog.Location = new System.Drawing.Point(122, 134);
             this.txt_psslog.Name = "txt_psslog";
             this.txt_psslog.PasswordChar = 'X';
-            this.txt_psslog.Size = new System.Drawing.Size(207, 22);
+            this.txt_psslog.Size = new System.Drawing.Size(156, 20);
             this.txt_psslog.TabIndex = 4;
             // 
             // label1
@@ -150,20 +143,18 @@ namespace Farmacia_Medic
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Fuchsia;
-            this.label1.Location = new System.Drawing.Point(219, 49);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(164, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 29);
+            this.label1.Size = new System.Drawing.Size(67, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "LOGIN";
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Tomato;
-            this.button2.Location = new System.Drawing.Point(271, 251);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Location = new System.Drawing.Point(203, 204);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 28);
+            this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 6;
             this.button2.Text = "Registrar";
             this.button2.UseVisualStyleBackColor = false;
@@ -173,49 +164,47 @@ namespace Farmacia_Medic
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label2.Location = new System.Drawing.Point(47, 168);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(35, 136);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 17);
+            this.label2.Size = new System.Drawing.Size(84, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "CONTRASEÑA:";
             // 
             // btn_log
             // 
             this.btn_log.BackColor = System.Drawing.Color.Tomato;
-            this.btn_log.Location = new System.Drawing.Point(163, 251);
-            this.btn_log.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_log.Location = new System.Drawing.Point(122, 204);
             this.btn_log.Name = "btn_log";
-            this.btn_log.Size = new System.Drawing.Size(100, 28);
+            this.btn_log.Size = new System.Drawing.Size(75, 23);
             this.btn_log.TabIndex = 5;
             this.btn_log.Text = "Ingresar";
             this.btn_log.UseVisualStyleBackColor = false;
+            this.btn_log.Click += new System.EventHandler(this.btn_log_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(-40, -18);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(-30, -15);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 17);
+            this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "CEDULA:";
             // 
             // txt_nomlog
             // 
             this.txt_nomlog.BackColor = System.Drawing.Color.White;
-            this.txt_nomlog.Location = new System.Drawing.Point(163, 107);
-            this.txt_nomlog.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_nomlog.Location = new System.Drawing.Point(122, 87);
             this.txt_nomlog.Name = "txt_nomlog";
-            this.txt_nomlog.Size = new System.Drawing.Size(207, 22);
+            this.txt_nomlog.Size = new System.Drawing.Size(156, 20);
             this.txt_nomlog.TabIndex = 3;
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(501, 414);
+            this.ClientSize = new System.Drawing.Size(376, 336);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Login";
             this.Text = "Login";
             this.panel1.ResumeLayout(false);
