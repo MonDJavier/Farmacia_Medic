@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Farmacia_Medic
@@ -16,7 +13,7 @@ namespace Farmacia_Medic
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Presentacion() );
+            Application.Run(new Login());
         }
     }
 }
