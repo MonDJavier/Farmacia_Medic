@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Farmacia_Medic
 {
-    public partial class presentacion : Form
+    public partial class Presentacion : Form
     {
-        public presentacion()
+        public Presentacion()
         {
             InitializeComponent();
         }
@@ -65,5 +65,6 @@ namespace Farmacia_Medic
             fm.Show();
         }
 
+       
     }
 }

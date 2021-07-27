@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Farmacia_Medic
 {
-    public partial class Form1 : Form
+    public partial class frmLaboratorio : Form
     {
-        public Form1()
+        public frmLaboratorio()
         {
             InitializeComponent();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
