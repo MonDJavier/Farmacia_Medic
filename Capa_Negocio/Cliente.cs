@@ -14,13 +14,15 @@ namespace Capa_Negocio
         private string nombre;
         private string paterno;
         private string materno;
+        private string usuario;
+        private string contraseña;
         private string telefono;
         private string direccion;
         private string correo;
         public Cliente()
         {
             cod_cliente = 0;
-            nombre = paterno = materno = telefono = direccion = correo = string.Empty;
+            nombre = paterno = materno = usuario = contraseña = telefono = direccion = correo = string.Empty;
 
         }
         public int cod_clt
@@ -42,6 +44,16 @@ namespace Capa_Negocio
         {
             get { return this.materno; }
             set { this.materno = value; }
+        }
+        public string Usuario
+        {
+            get { return this.usuario; }
+            set { this.usuario = value; }
+        }
+        public string Contraseña
+        {
+            get { return this.contraseña; }
+            set { this.contraseña = value; }
         }
         public string Telefono
         {
@@ -66,6 +78,8 @@ namespace Capa_Negocio
                 AddParametro("@nombre", nombre);
                 AddParametro("@paterno", paterno);
                 AddParametro("@materno", materno);
+                AddParametro("@usuario"), usuario;
+                AddParametro("@contraseña"), contraseña;
                 AddParametro("@telefono", telefono);
                 AddParametro("@direccion", direccion);
                 AddParametro("@correo", correo);
@@ -106,7 +120,7 @@ namespace Capa_Negocio
         public DataSet buscarPorNombre(string criterio)
         {
             string s;
-            s = "select cod_clt,  nombre,paterno ,materno ,direccion, telefono,correo as ID  from cliente where nombre like'" + criterio + "%'";
+            s = "select cod_clt,  nombre,paterno ,materno,usuario,contraseña ,direccion, telefono,correo as ID  from cliente where nombre like'" + criterio + "%'";
             DataSet ds = new DataSet();
             ejecutarSQL(s, "tc", ds);
             return ds;
@@ -115,7 +129,7 @@ namespace Capa_Negocio
         public DataSet buscarPorCodigo(string criterio)
         {
             string s;
-            s = "select cod_clt,  nombre,paterno ,materno ,direccion, telefono,correo as ID from cliente where cod_clt like'" + criterio + "%'";
+            s = "select cod_clt,  nombre,paterno ,materno,usuario,contraseña ,direccion, telefono,correo as ID from cliente where cod_clt like'" + criterio + "%'";
             DataSet ds = new DataSet();
             ejecutarSQL(s, "tc", ds);
             return ds;

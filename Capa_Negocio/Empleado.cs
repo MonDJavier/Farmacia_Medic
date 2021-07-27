@@ -17,6 +17,8 @@ namespace Capa_Negocio
         private string nombre;
         private string paterno;
         private string materno;
+        private string usuario;
+        private string contraseña;
         private string telefono;
         private string direccion;
 
@@ -46,6 +48,16 @@ namespace Capa_Negocio
             get { return this.materno; }
             set { this.materno = value; }
         }
+        public string Usuario
+        {
+            get { return this.usuario; }
+            set { this.usuario = value; }
+        }
+        public string Contraseña
+        {
+            get { return this.contraseña; }
+            set { this.contraseña = value; }
+        }
 
         public string Direccion
         {
@@ -70,6 +82,8 @@ namespace Capa_Negocio
                 AddParametro("@nombre", this.nombre);
                 AddParametro("@paterno", this.paterno);
                 AddParametro("@materno", this.materno);
+                AddParametro("@usuario"), usuario;
+                AddParametro("@contraseña"), contraseña;
                 AddParametro("@telefono", this.telefono);
                 AddParametro("@direccion", this.direccion);
                 ejecutarSP();
