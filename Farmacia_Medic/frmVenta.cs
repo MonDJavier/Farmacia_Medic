@@ -180,7 +180,7 @@ namespace Farmacia_Medic
             }
             string obtenerDescripcion(int cod)
             {
-                DAL.DAC cn = new DAL.DAC();
+                Capa_Datos.DAC cn = new Capa_Datos.DAC();
                 DataSet ds = new DataSet();
                 DataRow reg;
                 string s = "select nombre from medicamento where cod_med=" + cod;
