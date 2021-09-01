@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Collections;
-using Capa_Datos;
-using Capa_Negocio;
+using CapaDatosPrueba;
+using CapaNegocioPrueba;
 
 namespace Farmacia_Medic
 {
@@ -54,7 +54,7 @@ namespace Farmacia_Medic
         }
         public string retornar_id_lab(string s)
         {
-            laboratorio c = new laboratorio();
+            Laboratorio c = new Laboratorio();
             DataSet ds = new DataSet();
             ds = c.buscarPorNombre(cbolab.Text);
             DataRow reg = ds.Tables[0].Rows[0];
@@ -63,7 +63,7 @@ namespace Farmacia_Medic
         }
         public void mostrarlab()
         {
-            laboratorio c = new laboratorio();
+            Laboratorio c = new Laboratorio();
             DataSet ds = new DataSet();
             ds = c.buscar();
             foreach (DataRow reg in ds.Tables[0].Rows)
@@ -71,7 +71,7 @@ namespace Farmacia_Medic
         }
         public void listar_lab()
         {
-            laboratorio c = new laboratorio();
+            Laboratorio c = new Laboratorio();
             DataSet ds = new DataSet();
             ds = c.buscar();
             foreach (DataRow reg in ds.Tables[0].Rows)

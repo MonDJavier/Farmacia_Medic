@@ -36,15 +36,20 @@ namespace Farmacia_Medic
             this.txtStock = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btn_Modificar = new System.Windows.Forms.Button();
+            this.btn_eliminar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.ImgCli = new System.Windows.Forms.PictureBox();
+            this.btn_foto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImgCli)).BeginInit();
             this.SuspendLayout();
             // 
             // txtBuscar
@@ -68,58 +73,59 @@ namespace Farmacia_Medic
             // 
             // txtCategoria
             // 
-            this.txtCategoria.Location = new System.Drawing.Point(194, 83);
+            this.txtCategoria.Location = new System.Drawing.Point(135, 83);
             this.txtCategoria.Name = "txtCategoria";
             this.txtCategoria.Size = new System.Drawing.Size(226, 20);
             this.txtCategoria.TabIndex = 27;
             // 
             // txtStock
             // 
-            this.txtStock.Location = new System.Drawing.Point(193, 109);
+            this.txtStock.Location = new System.Drawing.Point(134, 109);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(226, 20);
             this.txtStock.TabIndex = 26;
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(193, 137);
+            this.txtPrecio.Location = new System.Drawing.Point(134, 137);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(226, 20);
             this.txtPrecio.TabIndex = 25;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(193, 53);
+            this.txtNombre.Location = new System.Drawing.Point(134, 53);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(226, 20);
             this.txtNombre.TabIndex = 24;
             // 
-            // button5
+            // btn_Modificar
             // 
-            this.button5.Location = new System.Drawing.Point(260, 176);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 23;
-            this.button5.Text = "Modificar";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btn_Modificar.Location = new System.Drawing.Point(273, 176);
+            this.btn_Modificar.Name = "btn_Modificar";
+            this.btn_Modificar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Modificar.TabIndex = 23;
+            this.btn_Modificar.Text = "Modificar";
+            this.btn_Modificar.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btn_eliminar
             // 
-            this.button4.Location = new System.Drawing.Point(376, 176);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 22;
-            this.button4.Text = "Eliminar";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_eliminar.Location = new System.Drawing.Point(376, 176);
+            this.btn_eliminar.Name = "btn_eliminar";
+            this.btn_eliminar.Size = new System.Drawing.Size(75, 23);
+            this.btn_eliminar.TabIndex = 22;
+            this.btn_eliminar.Text = "Eliminar";
+            this.btn_eliminar.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(135, 176);
+            this.button2.Location = new System.Drawing.Point(162, 176);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 21;
             this.button2.Text = "Guardar";
             this.button2.UseVisualStyleBackColor = true;
+          
             // 
             // label4
             // 
@@ -127,7 +133,7 @@ namespace Farmacia_Medic
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Lime;
-            this.label4.Location = new System.Drawing.Point(89, 83);
+            this.label4.Location = new System.Drawing.Point(30, 83);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 24);
             this.label4.TabIndex = 20;
@@ -139,7 +145,7 @@ namespace Farmacia_Medic
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Lime;
-            this.label3.Location = new System.Drawing.Point(94, 109);
+            this.label3.Location = new System.Drawing.Point(30, 109);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 24);
             this.label3.TabIndex = 19;
@@ -151,7 +157,7 @@ namespace Farmacia_Medic
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Lime;
-            this.label2.Location = new System.Drawing.Point(94, 133);
+            this.label2.Location = new System.Drawing.Point(30, 132);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 24);
             this.label2.TabIndex = 18;
@@ -163,7 +169,7 @@ namespace Farmacia_Medic
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Lime;
-            this.label1.Location = new System.Drawing.Point(89, 53);
+            this.label1.Location = new System.Drawing.Point(30, 53);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 24);
             this.label1.TabIndex = 17;
@@ -179,30 +185,72 @@ namespace Farmacia_Medic
             this.dataGridView1.Size = new System.Drawing.Size(546, 150);
             this.dataGridView1.TabIndex = 16;
             // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Location = new System.Drawing.Point(47, 176);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
+            this.btnNuevo.TabIndex = 30;
+            this.btnNuevo.Text = "Ingresar";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(47, 206);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 31;
+            this.button3.Text = "Buscar";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // ImgCli
+            // 
+            this.ImgCli.Location = new System.Drawing.Point(425, 40);
+            this.ImgCli.Name = "ImgCli";
+            this.ImgCli.Size = new System.Drawing.Size(123, 117);
+            this.ImgCli.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ImgCli.TabIndex = 32;
+            this.ImgCli.TabStop = false;
+            // 
+            // btn_foto
+            // 
+            this.btn_foto.Location = new System.Drawing.Point(473, 176);
+            this.btn_foto.Name = "btn_foto";
+            this.btn_foto.Size = new System.Drawing.Size(85, 23);
+            this.btn_foto.TabIndex = 33;
+            this.btn_foto.Text = "Foto";
+            this.btn_foto.UseVisualStyleBackColor = true;
+            this.btn_foto.Click += new System.EventHandler(this.btn_foto_Click);
+            // 
             // frmMedicamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(600, 406);
+            this.Controls.Add(this.btn_foto);
+            this.Controls.Add(this.ImgCli);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtCategoria);
             this.Controls.Add(this.txtStock);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btn_Modificar);
+            this.Controls.Add(this.btn_eliminar);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmMedicamento";
             this.Text = "frmMedicamento";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImgCli)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,13 +264,17 @@ namespace Farmacia_Medic
         private System.Windows.Forms.TextBox txtStock;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btn_Modificar;
+        private System.Windows.Forms.Button btn_eliminar;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.PictureBox ImgCli;
+        private System.Windows.Forms.Button btn_foto;
     }
 }

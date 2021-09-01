@@ -1,4 +1,5 @@
-﻿using Capa_Negocio;
+﻿using CapaDatosPrueba;
+using CapaNegocioPrueba;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

@@ -57,59 +57,53 @@ namespace Farmacia_Medic
             // 
             // txtcodigo
             // 
-            this.txtcodigo.Location = new System.Drawing.Point(44, 546);
-            this.txtcodigo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtcodigo.Location = new System.Drawing.Point(33, 444);
             this.txtcodigo.Name = "txtcodigo";
-            this.txtcodigo.Size = new System.Drawing.Size(167, 22);
+            this.txtcodigo.Size = new System.Drawing.Size(126, 20);
             this.txtcodigo.TabIndex = 126;
             this.txtcodigo.Visible = false;
             // 
             // btbuscar
             // 
-            this.btbuscar.Location = new System.Drawing.Point(771, 245);
-            this.btbuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.btbuscar.Location = new System.Drawing.Point(580, 116);
             this.btbuscar.Name = "btbuscar";
-            this.btbuscar.Size = new System.Drawing.Size(100, 28);
+            this.btbuscar.Size = new System.Drawing.Size(75, 23);
             this.btbuscar.TabIndex = 125;
             this.btbuscar.Text = "Buscar";
             this.btbuscar.UseVisualStyleBackColor = true;
             // 
             // bteliminar
             // 
-            this.bteliminar.Location = new System.Drawing.Point(771, 312);
-            this.bteliminar.Margin = new System.Windows.Forms.Padding(4);
+            this.bteliminar.Location = new System.Drawing.Point(580, 171);
             this.bteliminar.Name = "bteliminar";
-            this.bteliminar.Size = new System.Drawing.Size(100, 28);
+            this.bteliminar.Size = new System.Drawing.Size(75, 23);
             this.bteliminar.TabIndex = 124;
             this.bteliminar.Text = "Eliminar";
             this.bteliminar.UseVisualStyleBackColor = true;
             // 
             // btmodificar
             // 
-            this.btmodificar.Location = new System.Drawing.Point(649, 312);
-            this.btmodificar.Margin = new System.Windows.Forms.Padding(4);
+            this.btmodificar.Location = new System.Drawing.Point(489, 171);
             this.btmodificar.Name = "btmodificar";
-            this.btmodificar.Size = new System.Drawing.Size(100, 28);
+            this.btmodificar.Size = new System.Drawing.Size(75, 23);
             this.btmodificar.TabIndex = 123;
             this.btmodificar.Text = "Modificar";
             this.btmodificar.UseVisualStyleBackColor = true;
             // 
             // btguardar
             // 
-            this.btguardar.Location = new System.Drawing.Point(528, 313);
-            this.btguardar.Margin = new System.Windows.Forms.Padding(4);
+            this.btguardar.Location = new System.Drawing.Point(398, 171);
             this.btguardar.Name = "btguardar";
-            this.btguardar.Size = new System.Drawing.Size(100, 28);
+            this.btguardar.Size = new System.Drawing.Size(75, 23);
             this.btguardar.TabIndex = 122;
             this.btguardar.Text = "Guardar";
             this.btguardar.UseVisualStyleBackColor = true;
             // 
             // btnuevo
             // 
-            this.btnuevo.Location = new System.Drawing.Point(407, 314);
-            this.btnuevo.Margin = new System.Windows.Forms.Padding(4);
+            this.btnuevo.Location = new System.Drawing.Point(307, 172);
             this.btnuevo.Name = "btnuevo";
-            this.btnuevo.Size = new System.Drawing.Size(100, 28);
+            this.btnuevo.Size = new System.Drawing.Size(75, 23);
             this.btnuevo.TabIndex = 121;
             this.btnuevo.Text = "Nuevo";
             this.btnuevo.UseVisualStyleBackColor = true;
@@ -119,10 +113,9 @@ namespace Farmacia_Medic
             this.radioButton2.AutoSize = true;
             this.radioButton2.BackColor = System.Drawing.Color.Transparent;
             this.radioButton2.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.radioButton2.Location = new System.Drawing.Point(672, 217);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(4);
+            this.radioButton2.Location = new System.Drawing.Point(506, 93);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(73, 21);
+            this.radioButton2.Size = new System.Drawing.Size(58, 17);
             this.radioButton2.TabIndex = 120;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Codigo";
@@ -134,10 +127,9 @@ namespace Farmacia_Medic
             this.radioButton1.BackColor = System.Drawing.Color.Transparent;
             this.radioButton1.Checked = true;
             this.radioButton1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.radioButton1.Location = new System.Drawing.Point(563, 216);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.radioButton1.Location = new System.Drawing.Point(424, 93);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(79, 21);
+            this.radioButton1.Size = new System.Drawing.Size(62, 17);
             this.radioButton1.TabIndex = 119;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Nombre";
@@ -149,10 +141,9 @@ namespace Farmacia_Medic
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label9.Location = new System.Drawing.Point(403, 215);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(304, 92);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(130, 22);
+            this.label9.Size = new System.Drawing.Size(104, 18);
             this.label9.TabIndex = 118;
             this.label9.Text = "Buscar por :";
             // 
@@ -164,60 +155,53 @@ namespace Farmacia_Medic
             this.dgempleado.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgempleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgempleado.GridColor = System.Drawing.SystemColors.InfoText;
-            this.dgempleado.Location = new System.Drawing.Point(44, 348);
-            this.dgempleado.Margin = new System.Windows.Forms.Padding(4);
+            this.dgempleado.Location = new System.Drawing.Point(33, 243);
             this.dgempleado.Name = "dgempleado";
             this.dgempleado.RowHeadersVisible = false;
             this.dgempleado.RowHeadersWidth = 51;
-            this.dgempleado.Size = new System.Drawing.Size(827, 192);
+            this.dgempleado.Size = new System.Drawing.Size(620, 196);
             this.dgempleado.TabIndex = 117;
             // 
             // txtbuscar
             // 
-            this.txtbuscar.Location = new System.Drawing.Point(407, 249);
-            this.txtbuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.txtbuscar.Location = new System.Drawing.Point(307, 119);
             this.txtbuscar.Name = "txtbuscar";
-            this.txtbuscar.Size = new System.Drawing.Size(341, 22);
+            this.txtbuscar.Size = new System.Drawing.Size(257, 20);
             this.txtbuscar.TabIndex = 116;
             // 
             // txttelefono
             // 
-            this.txttelefono.Location = new System.Drawing.Point(164, 316);
-            this.txttelefono.Margin = new System.Windows.Forms.Padding(4);
+            this.txttelefono.Location = new System.Drawing.Point(123, 198);
             this.txttelefono.Name = "txttelefono";
-            this.txttelefono.Size = new System.Drawing.Size(205, 22);
+            this.txttelefono.Size = new System.Drawing.Size(155, 20);
             this.txttelefono.TabIndex = 115;
             // 
             // txtdireccion
             // 
-            this.txtdireccion.Location = new System.Drawing.Point(164, 282);
-            this.txtdireccion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtdireccion.Location = new System.Drawing.Point(123, 170);
             this.txtdireccion.Name = "txtdireccion";
-            this.txtdireccion.Size = new System.Drawing.Size(205, 22);
+            this.txtdireccion.Size = new System.Drawing.Size(155, 20);
             this.txtdireccion.TabIndex = 114;
             // 
             // txtmaterno
             // 
-            this.txtmaterno.Location = new System.Drawing.Point(164, 249);
-            this.txtmaterno.Margin = new System.Windows.Forms.Padding(4);
+            this.txtmaterno.Location = new System.Drawing.Point(123, 143);
             this.txtmaterno.Name = "txtmaterno";
-            this.txtmaterno.Size = new System.Drawing.Size(205, 22);
+            this.txtmaterno.Size = new System.Drawing.Size(155, 20);
             this.txtmaterno.TabIndex = 113;
             // 
             // txtpaterno
             // 
-            this.txtpaterno.Location = new System.Drawing.Point(164, 216);
-            this.txtpaterno.Margin = new System.Windows.Forms.Padding(4);
+            this.txtpaterno.Location = new System.Drawing.Point(123, 117);
             this.txtpaterno.Name = "txtpaterno";
-            this.txtpaterno.Size = new System.Drawing.Size(205, 22);
+            this.txtpaterno.Size = new System.Drawing.Size(155, 20);
             this.txtpaterno.TabIndex = 112;
             // 
             // txtnombre
             // 
-            this.txtnombre.Location = new System.Drawing.Point(164, 183);
-            this.txtnombre.Margin = new System.Windows.Forms.Padding(4);
+            this.txtnombre.Location = new System.Drawing.Point(123, 90);
             this.txtnombre.Name = "txtnombre";
-            this.txtnombre.Size = new System.Drawing.Size(205, 22);
+            this.txtnombre.Size = new System.Drawing.Size(155, 20);
             this.txtnombre.TabIndex = 111;
             // 
             // label7
@@ -226,10 +210,9 @@ namespace Farmacia_Medic
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label7.Location = new System.Drawing.Point(40, 321);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(30, 202);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(110, 22);
+            this.label7.Size = new System.Drawing.Size(88, 18);
             this.label7.TabIndex = 110;
             this.label7.Text = "Telefono :";
             // 
@@ -239,10 +222,9 @@ namespace Farmacia_Medic
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label6.Location = new System.Drawing.Point(40, 289);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(30, 176);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(120, 22);
+            this.label6.Size = new System.Drawing.Size(96, 18);
             this.label6.TabIndex = 109;
             this.label6.Text = "Direccion :";
             // 
@@ -252,10 +234,9 @@ namespace Farmacia_Medic
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label4.Location = new System.Drawing.Point(40, 257);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(30, 150);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 22);
+            this.label4.Size = new System.Drawing.Size(80, 18);
             this.label4.TabIndex = 108;
             this.label4.Text = "Materno :";
             // 
@@ -265,10 +246,9 @@ namespace Farmacia_Medic
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label3.Location = new System.Drawing.Point(40, 225);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(30, 124);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 22);
+            this.label3.Size = new System.Drawing.Size(80, 18);
             this.label3.TabIndex = 107;
             this.label3.Text = "Paterno :";
             // 
@@ -278,10 +258,9 @@ namespace Farmacia_Medic
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label2.Location = new System.Drawing.Point(40, 185);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(30, 91);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 22);
+            this.label2.Size = new System.Drawing.Size(72, 18);
             this.label2.TabIndex = 106;
             this.label2.Text = "Nombre :";
             // 
@@ -291,19 +270,18 @@ namespace Farmacia_Medic
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gold;
-            this.label1.Location = new System.Drawing.Point(248, 94);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(236, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(340, 40);
+            this.label1.Size = new System.Drawing.Size(270, 32);
             this.label1.TabIndex = 105;
             this.label1.Text = "REGISTRO EMPLEADO";
             // 
             // frmEmpleado
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(922, 602);
+            this.ClientSize = new System.Drawing.Size(692, 489);
             this.Controls.Add(this.txtcodigo);
             this.Controls.Add(this.btbuscar);
             this.Controls.Add(this.bteliminar);
@@ -326,6 +304,7 @@ namespace Farmacia_Medic
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmEmpleado";
             this.Text = "frmEmpleado";
             ((System.ComponentModel.ISupportInitialize)(this.dgempleado)).EndInit();

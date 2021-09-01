@@ -66,19 +66,17 @@ namespace Farmacia_Medic
             // txtCat
             // 
             this.txtCat.Enabled = false;
-            this.txtCat.Location = new System.Drawing.Point(746, 29);
-            this.txtCat.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCat.Location = new System.Drawing.Point(560, 24);
             this.txtCat.Name = "txtCat";
-            this.txtCat.Size = new System.Drawing.Size(55, 22);
+            this.txtCat.Size = new System.Drawing.Size(42, 20);
             this.txtCat.TabIndex = 54;
             // 
             // txtCodEmpleado
             // 
             this.txtCodEmpleado.Enabled = false;
-            this.txtCodEmpleado.Location = new System.Drawing.Point(298, 106);
-            this.txtCodEmpleado.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCodEmpleado.Location = new System.Drawing.Point(224, 86);
             this.txtCodEmpleado.Name = "txtCodEmpleado";
-            this.txtCodEmpleado.Size = new System.Drawing.Size(55, 22);
+            this.txtCodEmpleado.Size = new System.Drawing.Size(42, 20);
             this.txtCodEmpleado.TabIndex = 53;
             this.txtCodEmpleado.Visible = false;
             // 
@@ -88,10 +86,9 @@ namespace Farmacia_Medic
             this.label7.BackColor = System.Drawing.Color.Black;
             this.label7.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Chartreuse;
-            this.label7.Location = new System.Drawing.Point(508, 177);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(381, 144);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(100, 22);
+            this.label7.Size = new System.Drawing.Size(80, 18);
             this.label7.TabIndex = 52;
             this.label7.Text = "Categoria";
             // 
@@ -99,19 +96,17 @@ namespace Farmacia_Medic
             // 
             this.cobCategoria.Enabled = false;
             this.cobCategoria.FormattingEnabled = true;
-            this.cobCategoria.Location = new System.Drawing.Point(512, 202);
-            this.cobCategoria.Margin = new System.Windows.Forms.Padding(4);
+            this.cobCategoria.Location = new System.Drawing.Point(384, 164);
             this.cobCategoria.Name = "cobCategoria";
-            this.cobCategoria.Size = new System.Drawing.Size(265, 24);
+            this.cobCategoria.Size = new System.Drawing.Size(200, 21);
             this.cobCategoria.TabIndex = 51;
             // 
             // txtTotal
             // 
             this.txtTotal.Enabled = false;
-            this.txtTotal.Location = new System.Drawing.Point(34, -28);
-            this.txtTotal.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTotal.Location = new System.Drawing.Point(26, -23);
             this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(63, 22);
+            this.txtTotal.Size = new System.Drawing.Size(48, 20);
             this.txtTotal.TabIndex = 50;
             this.txtTotal.Visible = false;
             // 
@@ -122,10 +117,9 @@ namespace Farmacia_Medic
             this.lblCodEmp.Enabled = false;
             this.lblCodEmp.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCodEmp.ForeColor = System.Drawing.Color.Chartreuse;
-            this.lblCodEmp.Location = new System.Drawing.Point(52, 103);
-            this.lblCodEmp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCodEmp.Location = new System.Drawing.Point(39, 84);
             this.lblCodEmp.Name = "lblCodEmp";
-            this.lblCodEmp.Size = new System.Drawing.Size(80, 22);
+            this.lblCodEmp.Size = new System.Drawing.Size(64, 18);
             this.lblCodEmp.TabIndex = 49;
             this.lblCodEmp.Text = "Codigo:";
             this.lblCodEmp.Visible = false;
@@ -133,19 +127,17 @@ namespace Farmacia_Medic
             // txtCodCliente
             // 
             this.txtCodCliente.Enabled = false;
-            this.txtCodCliente.Location = new System.Drawing.Point(183, 106);
-            this.txtCodCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCodCliente.Location = new System.Drawing.Point(137, 86);
             this.txtCodCliente.Name = "txtCodCliente";
-            this.txtCodCliente.Size = new System.Drawing.Size(55, 22);
+            this.txtCodCliente.Size = new System.Drawing.Size(42, 20);
             this.txtCodCliente.TabIndex = 48;
             this.txtCodCliente.Visible = false;
             // 
             // btnBuscarCliente
             // 
-            this.btnBuscarCliente.Location = new System.Drawing.Point(368, 140);
-            this.btnBuscarCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscarCliente.Location = new System.Drawing.Point(276, 114);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(100, 28);
+            this.btnBuscarCliente.Size = new System.Drawing.Size(75, 23);
             this.btnBuscarCliente.TabIndex = 47;
             this.btnBuscarCliente.Text = "Buscar";
             this.btnBuscarCliente.UseVisualStyleBackColor = true;
@@ -154,28 +146,25 @@ namespace Farmacia_Medic
             // 
             this.cboEmpleado.Enabled = false;
             this.cboEmpleado.FormattingEnabled = true;
-            this.cboEmpleado.Location = new System.Drawing.Point(183, 173);
-            this.cboEmpleado.Margin = new System.Windows.Forms.Padding(4);
+            this.cboEmpleado.Location = new System.Drawing.Point(137, 141);
             this.cboEmpleado.Name = "cboEmpleado";
-            this.cboEmpleado.Size = new System.Drawing.Size(169, 24);
+            this.cboEmpleado.Size = new System.Drawing.Size(128, 21);
             this.cboEmpleado.TabIndex = 46;
             // 
             // txtMedicamento
             // 
             this.txtMedicamento.Enabled = false;
-            this.txtMedicamento.Location = new System.Drawing.Point(183, 207);
-            this.txtMedicamento.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMedicamento.Location = new System.Drawing.Point(137, 168);
             this.txtMedicamento.Name = "txtMedicamento";
-            this.txtMedicamento.Size = new System.Drawing.Size(244, 22);
+            this.txtMedicamento.Size = new System.Drawing.Size(184, 20);
             this.txtMedicamento.TabIndex = 45;
             // 
             // txtCliente
             // 
             this.txtCliente.Enabled = false;
-            this.txtCliente.Location = new System.Drawing.Point(183, 140);
-            this.txtCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCliente.Location = new System.Drawing.Point(137, 114);
             this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(169, 22);
+            this.txtCliente.Size = new System.Drawing.Size(128, 20);
             this.txtCliente.TabIndex = 44;
             // 
             // label6
@@ -184,19 +173,17 @@ namespace Farmacia_Medic
             this.label6.BackColor = System.Drawing.Color.Black;
             this.label6.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Chartreuse;
-            this.label6.Location = new System.Drawing.Point(52, 210);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(39, 171);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(130, 22);
+            this.label6.Size = new System.Drawing.Size(104, 18);
             this.label6.TabIndex = 43;
             this.label6.Text = "Medicamento:";
             // 
             // Imprimir
             // 
-            this.Imprimir.Location = new System.Drawing.Point(679, 259);
-            this.Imprimir.Margin = new System.Windows.Forms.Padding(4);
+            this.Imprimir.Location = new System.Drawing.Point(509, 210);
             this.Imprimir.Name = "Imprimir";
-            this.Imprimir.Size = new System.Drawing.Size(100, 28);
+            this.Imprimir.Size = new System.Drawing.Size(75, 23);
             this.Imprimir.TabIndex = 42;
             this.Imprimir.Text = "Imprimir";
             this.Imprimir.UseVisualStyleBackColor = true;
@@ -204,12 +191,12 @@ namespace Farmacia_Medic
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.BackColor = System.Drawing.Color.Black;
+            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Chartreuse;
-            this.label5.Location = new System.Drawing.Point(319, 471);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(239, 401);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(143, 17);
+            this.label5.Size = new System.Drawing.Size(171, 23);
             this.label5.TabIndex = 41;
             this.label5.Text = "DETALLE DE VENTA";
             // 
@@ -219,10 +206,9 @@ namespace Farmacia_Medic
             this.label4.BackColor = System.Drawing.Color.Black;
             this.label4.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Chartreuse;
-            this.label4.Location = new System.Drawing.Point(52, 174);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(39, 141);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 22);
+            this.label4.Size = new System.Drawing.Size(80, 18);
             this.label4.TabIndex = 40;
             this.label4.Text = "Empleado:";
             // 
@@ -232,10 +218,9 @@ namespace Farmacia_Medic
             this.label3.BackColor = System.Drawing.Color.Black;
             this.label3.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Chartreuse;
-            this.label3.Location = new System.Drawing.Point(52, 138);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(39, 112);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 22);
+            this.label3.Size = new System.Drawing.Size(72, 18);
             this.label3.TabIndex = 39;
             this.label3.Text = "Cliente:";
             // 
@@ -245,10 +230,9 @@ namespace Farmacia_Medic
             this.label2.BackColor = System.Drawing.Color.Black;
             this.label2.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Chartreuse;
-            this.label2.Location = new System.Drawing.Point(508, 111);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(381, 90);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 22);
+            this.label2.Size = new System.Drawing.Size(48, 18);
             this.label2.TabIndex = 38;
             this.label2.Text = "Fecha";
             // 
@@ -256,60 +240,54 @@ namespace Farmacia_Medic
             // 
             this.dgvDetallVenta.BackgroundColor = System.Drawing.Color.Black;
             this.dgvDetallVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDetallVenta.Location = new System.Drawing.Point(54, 490);
-            this.dgvDetallVenta.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvDetallVenta.Location = new System.Drawing.Point(40, 441);
             this.dgvDetallVenta.Name = "dgvDetallVenta";
             this.dgvDetallVenta.RowHeadersWidth = 51;
-            this.dgvDetallVenta.Size = new System.Drawing.Size(725, 169);
+            this.dgvDetallVenta.Size = new System.Drawing.Size(544, 137);
             this.dgvDetallVenta.TabIndex = 37;
             this.dgvDetallVenta.Visible = false;
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(555, 259);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscar.Location = new System.Drawing.Point(416, 210);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(100, 28);
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 36;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(431, 259);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminar.Location = new System.Drawing.Point(323, 210);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(100, 28);
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 35;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(307, 259);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnModificar.Location = new System.Drawing.Point(230, 210);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(100, 28);
+            this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 34;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(183, 259);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGuardar.Location = new System.Drawing.Point(137, 210);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(100, 28);
+            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 33;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(59, 259);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNuevo.Location = new System.Drawing.Point(44, 210);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(100, 28);
+            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
             this.btnNuevo.TabIndex = 32;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
@@ -320,10 +298,9 @@ namespace Farmacia_Medic
             this.label1.BackColor = System.Drawing.Color.Black;
             this.label1.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gold;
-            this.label1.Location = new System.Drawing.Point(246, 14);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(184, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(359, 40);
+            this.label1.Size = new System.Drawing.Size(285, 32);
             this.label1.TabIndex = 31;
             this.label1.Text = "REGISTRO DE VENTAS";
             // 
@@ -331,29 +308,26 @@ namespace Farmacia_Medic
             // 
             this.dgvMedicamento.BackgroundColor = System.Drawing.Color.Black;
             this.dgvMedicamento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMedicamento.Location = new System.Drawing.Point(56, 298);
-            this.dgvMedicamento.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvMedicamento.Location = new System.Drawing.Point(42, 242);
             this.dgvMedicamento.Name = "dgvMedicamento";
             this.dgvMedicamento.RowHeadersVisible = false;
             this.dgvMedicamento.RowHeadersWidth = 51;
-            this.dgvMedicamento.Size = new System.Drawing.Size(725, 169);
+            this.dgvMedicamento.Size = new System.Drawing.Size(544, 137);
             this.dgvMedicamento.TabIndex = 30;
             // 
             // dtpFecha
             // 
-            this.dtpFecha.Location = new System.Drawing.Point(512, 145);
-            this.dtpFecha.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpFecha.Location = new System.Drawing.Point(384, 118);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(265, 22);
+            this.dtpFecha.Size = new System.Drawing.Size(200, 20);
             this.dtpFecha.TabIndex = 29;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(-2, 1);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(860, 658);
+            this.pictureBox1.Size = new System.Drawing.Size(645, 590);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 55;
             this.pictureBox1.TabStop = false;
@@ -363,17 +337,16 @@ namespace Farmacia_Medic
             // 
             this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(-2, 1);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(63, 22);
+            this.textBox1.Size = new System.Drawing.Size(48, 20);
             this.textBox1.TabIndex = 56;
             this.textBox1.Visible = false;
             // 
             // frmVenta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(867, 678);
+            this.ClientSize = new System.Drawing.Size(650, 590);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txtCat);
             this.Controls.Add(this.txtCodEmpleado);
@@ -402,6 +375,7 @@ namespace Farmacia_Medic
             this.Controls.Add(this.dgvMedicamento);
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmVenta";
             this.Text = "frmVentas";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetallVenta)).EndInit();

@@ -10,69 +10,26 @@ namespace Capa_Datos
 {
     public class DAC
     {
+        //8creamos la cadena de conexion
+        private SqlConnection Conexion = new SqlConnection("Data Source=192.168.100.69;Initial Catalog=LogCMWF;Integrated Security=True");
 
-        private String servidor;
-        private String basedatos;
-        private String usuario;
-        private String contrasena;
-        private SqlCommand cmdSP;
+        //metodo de apertura y cierre de conexion
 
-        public DAC()
-        { //constructor
-
-            this.servidor = "192.168.100.69";
-            this.usuario = "sa";
-            this.contrasena = "12345";
-            this.basedatos = "bd_farmacia";
-            this.cmdSP = new SqlCommand();
-        }
-
-        public SqlConnection conectar()
+        public SqlConnection abrir_conexion()
         {
-            SqlConnection connect = new SqlConnection();
-            connect.ConnectionString = "Data Source =" +
-                this.servidor + "; User ID=" +
-                this.usuario + "; Password=" +
-                this.contrasena + "; Initial Catalog= " +
-                this.basedatos;
-            connect.Open();
-            return connect;
+            if (Conexion.State == ConnectionState.Closed)
+            {
+                Conexion.Open();
+            }
+            return Conexion;
         }
-        public void desconectar()
+        public SqlConnection cerrar_conexion()
         {
-            SqlConnection cnx = this.conectar();
-            cnx.Close();
-        }
-
-        public void PrepararSP(String sp)
-        {
-            //procedimiento almacenado
-            cmdSP.Connection = conectar();
-            cmdSP.CommandType = CommandType.StoredProcedure;
-            cmdSP.CommandText = sp;
-        }
-
-        public void AddParametro(String param, String valor)
-        {
-            SqlParameter par = new SqlParameter();
-            par.ParameterName = param;
-            par.Value = valor;
-            cmdSP.Parameters.Add(par);
-        }
-
-        public void ejecutarSP()
-        {
-            SqlDataReader spResult;
-            cmdSP.Prepare();
-            spResult = cmdSP.ExecuteReader();
-        }
-
-        public void ejecutarSQL(String s, String nTable, DataSet ds)
-        {
-            SqlDataAdapter sqlAdapter;
-            sqlAdapter = new SqlDataAdapter(s, conectar());
-            sqlAdapter.Fill(ds, nTable);
-            desconectar();
+            if (Conexion.State == ConnectionState.Open)
+            {
+                Conexion.Close();
+            }
+            return Conexion;
         }
     }
 

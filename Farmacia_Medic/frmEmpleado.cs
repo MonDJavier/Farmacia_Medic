@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Collections;
-using Capa_Datos;
-using Capa_Negocio;
+using CapaDatosPrueba;
+using CapaNegocioPrueba;
 
 
 namespace Farmacia_Medic

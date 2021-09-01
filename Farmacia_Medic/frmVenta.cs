@@ -6,8 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Capa_Datos;
-using Capa_Negocio;
+using CapaDatosPrueba;
+using CapaNegocioPrueba;
 namespace Farmacia_Medic
 {
     public partial class frmVenta : Form
@@ -62,7 +62,7 @@ namespace Farmacia_Medic
 
             void GuardarCabecera()
             {
-                venta v = new venta();
+                Venta v = new Venta();
                 v.Fecha = DateTime.Parse(dtpFecha.Value.ToString());
                 v.Cod_Cliente = int.Parse(txtCodCliente.Text);
                 v.Cod_Empleado = int.Parse(cboEmpleado.Text);
@@ -124,7 +124,7 @@ namespace Farmacia_Medic
             }
             void listaCategoria()
             {
-                categoria c = new categoria();
+                Categoria c = new Categoria();
                 DataSet ds = new DataSet();
                 ds = c.Buscar();
                 foreach (DataRow reg in ds.Tables[0].Rows)
@@ -143,7 +143,7 @@ namespace Farmacia_Medic
 
             private void txtMedicamento_TextChanged(object sender, EventArgs e)
             {
-                medicamento p = new medicamento();
+                Medicamento p = new Medicamento();
                 DataSet ds = new DataSet();
                 ds = p.buscarPorNombre(txtMedicamento.Text);
                 dgvMedicamento.DataSource = ds;
@@ -180,7 +180,7 @@ namespace Farmacia_Medic
             }
             string obtenerDescripcion(int cod)
             {
-                Capa_Datos.DAC cn = new Capa_Datos.DAC();
+                CapaDatosPrueba.Class1 cn = new CapaDatosPrueba.Class1();
                 DataSet ds = new DataSet();
                 DataRow reg;
                 string s = "select nombre from medicamento where cod_med=" + cod;
@@ -215,21 +215,21 @@ namespace Farmacia_Medic
 
             public void buscar()
             {
-                //medicamento med=new medicamento();
-                //string key=
-                //DataSet ds = med.llamarMedicamento(txtMedicamento.Text, key.ToString());
-                //string[] columnNames = new string[] { "Codigo", "Nombre", "Precio", "Stock" };
-                //int i=0;
-                //while (i < dgvMedicamento.NewRowIndex)
-                //{
-                //    dgvMedicamento[0, i].Value = ds.Container;
-                //    dgvMedicamento[1, i].Value = ds.Container;
-                //    dgvMedicamento[2, i].Value = ds.Container;
-                //    dgvMedicamento[3, i].Value = ds.Container;
-                //    i++;
-                //}
-
+            Medicamento med = new Medicamento();
+            string key = "";
+            DataSet ds = med.llamarMedicamento(txtMedicamento.Text, key.ToString());
+            string[] columnNames = new string[] { "Codigo", "Nombre", "Precio", "Stock" };
+            int i = 0;
+            while (i < dgvMedicamento.NewRowIndex)
+            {
+                dgvMedicamento[0, i].Value = ds.Container;
+                dgvMedicamento[1, i].Value = ds.Container;
+                dgvMedicamento[2, i].Value = ds.Container;
+                dgvMedicamento[3, i].Value = ds.Container;
+                i++;
             }
+
+        }
             private void cobCategoria_SelectedValueChanged(object sender, EventArgs e)
             {
 

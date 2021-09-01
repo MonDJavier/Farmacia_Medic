@@ -7,8 +7,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Capa_Datos;
-using Capa_Negocio;
+using CapaDatosPrueba;
+using CapaNegocioPrueba;
 using System.Collections;
 
 namespace Farmacia_Medic
@@ -21,7 +21,7 @@ namespace Farmacia_Medic
         }
         private void button4_Click(object sender, EventArgs e)
         {
-            categoria c = new categoria();
+            Categoria c = new Categoria();
             DataSet ds = new DataSet();
             ds = c.buscarPorNombre(txtBuscar.Text);
             dgvCategoria.DataSource = ds;
@@ -30,13 +30,13 @@ namespace Farmacia_Medic
 
         private void button1_Click(object sender, EventArgs e)
         {
-            categoria c = new categoria();
+            Categoria c = new Categoria();
             c.guardar(txtNombre.Text);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            categoria c = new categoria();
+            Categoria c = new Categoria();
             c.Codigo = int.Parse(txtcod.Text);
             c.Nombre = txtNombre.Text;
             c.modificar();
@@ -46,7 +46,7 @@ namespace Farmacia_Medic
 
         private void button2_Click(object sender, EventArgs e)
         {
-            categoria c = new categoria();
+            Categoria c = new Categoria();
             c.Codigo = int.Parse(txtcod.Text);
             c.Nombre = txtNombre.Text;
             c.eliminar();
@@ -75,7 +75,7 @@ namespace Farmacia_Medic
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            categoria p = new categoria();
+            Categoria p = new Categoria();
             DataSet ds = new DataSet();
             ds = p.buscarPorNombre(txtBuscar.Text);
             dgvCategoria.DataSource = ds;

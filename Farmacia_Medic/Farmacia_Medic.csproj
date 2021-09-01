@@ -166,13 +166,13 @@
     <None Include="Resources\fondo1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Capa_Datos\Capa_Datos.csproj">
-      <Project>{46867829-534c-481a-8b73-63dcfda1ae7a}</Project>
-      <Name>Capa_Datos</Name>
+    <ProjectReference Include="..\CapaDatosPrueba\CapaDatosPrueba.csproj">
+      <Project>{71402FA3-8D50-44C7-A549-22F8EB8A0D99}</Project>
+      <Name>CapaDatosPrueba</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Capa_Negocio\Capa_Negocio.csproj">
-      <Project>{193c22ac-2afb-4211-9cc0-d5efc3677060}</Project>
-      <Name>Capa_Negocio</Name>
+    <ProjectReference Include="..\CapaNegocioPrueba\CapaNegocioPrueba.csproj">
+      <Project>{eedacdab-9766-40a8-89c5-dd02a54b60b6}</Project>
+      <Name>CapaNegocioPrueba</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
