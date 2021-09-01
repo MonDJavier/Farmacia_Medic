@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaDatosPrueba;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -7,99 +8,27 @@ using System.Threading.Tasks;
 
 namespace CapaNegocioPrueba
 {
-    public class Medicamento : CapaDatosPrueba.Class1
+    public class Medicamento 
     {
-        #region Atributos
+        DataClasses1DataContext linq = new DataClasses1DataContext();
 
-        private int cod_med;
-        private string nombre;
-        private double precio;
-        private string foto;
-        private int stock;
-        private int cod_cat;
-        #endregion 
-
-        #region Constructor
-
-        public Medicamento()
+        public void MostrarMedicamento()
         {
-            cod_med = 0;
-            nombre = string.Empty;
-            precio = 0;
-            stock = 0;
-
+            linq.mostrarMedicamentos();
         }
 
-        #endregion 
 
-        #region Propiedades
-        public int Codigo
+        public void AgregarMedicamento(string med_nombre, Decimal med_precio, int med_stock,int cat_cod)
         {
-            get { return this.cod_med; }
-            set { this.cod_med = value; }
+            linq.insertarMedicamento(med_nombre,med_precio,med_stock,cat_cod);
         }
-
-        public string Nombre
+        public void ModificarMedicamento(int med_cod,string med_nombre, Decimal med_precio, int med_stock, int cat_cod)
         {
-            get { return this.nombre; }
-            set { this.nombre = value; }
+            linq.modificarMedicamento(med_cod,med_nombre,med_precio,med_stock,cat_cod);
         }
-
-        public double Precio
+        public void EliminarMedicamento(int med_cod)
         {
-            get { return this.precio; }
-            set { this.precio = value; }
-        }
-
-        public int Stock
-        {
-            get { return this.stock; }
-            set { this.stock = value; }
-        }
-
-        public int Cod_categoria
-        {
-            get { return this.cod_cat; }
-            set { this.cod_cat = value; }
-        }
-        public Byte[] xfoto
-        {
-            get { return this.xfoto; }
-            set { this.xfoto = value; }
-        }
-        #endregion 
-
-        #region 
-        public void guardar()
-        {
-
-            PrepararSP("insertarMedicamento");
-            AddParametro("@nombre", nombre);
-            AddParametro("@precio", precio.ToString());
-            AddParametro("@foto", xfoto.ToString());
-            AddParametro("@stock", stock.ToString());
-            AddParametro("@cod_cat", cod_cat.ToString());
-            ejecutarSP();
-        }
-        #endregion
-
-        public DataSet llamarMedicamento(string criterio, string key)
-        {
-            string s;
-            DataSet ds = new DataSet();
-            s = "select cod_med, nombre, precio,stock from medicamento  where nombre like'" + criterio + "%' and cod_cat=" + key + "";
-            ejecutarSQL(s, "tm", ds);
-            return ds;
-        }
-
-        public DataSet buscarPorNombre(String criterio)
-        {
-            string s;
-            s = "select  cod_med, nombre,precio,foto, stock from medicamento where nombre like '" + criterio + "%'";
-            DataSet ds = new DataSet();
-            ejecutarSQL(s, "tm", ds);
-            return ds;
-
+            linq.eliminarMedicamento(Convert.ToInt32(med_cod));
         }
     }
 }

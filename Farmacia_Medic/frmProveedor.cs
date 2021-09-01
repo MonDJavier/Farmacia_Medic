@@ -14,109 +14,83 @@ namespace Farmacia_Medic
 {
     public partial class frmProveedor : Form
     {
+        DataClasses1DataContext linq = new DataClasses1DataContext();
+        Proveedor objeto = new Proveedor();
         public frmProveedor()
         {
             InitializeComponent();
-            listar_lab();
-            txtlab.Enabled = false;
+     
         }
-        public void Limpiar()
+        private void cargarProveedor()
         {
-            txtnombre.Clear();
-            txtnit.Clear();
-            txtdireccion.Clear();
-            txttelefono.Clear();
-        }
-        void limpiar_text()
-        {
-            txtnombre.Text = "";
-            txtnit.Text = "";
-            txtdireccion.Text = "";
-            txttelefono.Text = "";
-            txtlab.Text = "";
-        }
-        public void habilitar()
-        {
-            limpiar_text();
-            txtnombre.Enabled = true;
-            txtnit.Enabled = true;
-            txtdireccion.Enabled = true;
-            txttelefono.Enabled = true;
-        }
-        public bool verificarVacio()
-        {
-            if (txtnombre.Text == "")
-                if (txtnit.Text == "")
-                    if (txttelefono.Text == "")
-                        if (txtdireccion.Text == "")
-                            return true;
-            return false;
-        }
-        public string retornar_id_lab(string s)
-        {
-            Laboratorio c = new Laboratorio();
-            DataSet ds = new DataSet();
-            ds = c.buscarPorNombre(cbolab.Text);
-            DataRow reg = ds.Tables[0].Rows[0];
-            string x = reg[0].ToString();
-            return x;
-        }
-        public void mostrarlab()
-        {
-            Laboratorio c = new Laboratorio();
-            DataSet ds = new DataSet();
-            ds = c.buscar();
-            foreach (DataRow reg in ds.Tables[0].Rows)
-                cbolab.Items.Add(reg[1].ToString().Trim());
-        }
-        public void listar_lab()
-        {
-            Laboratorio c = new Laboratorio();
-            DataSet ds = new DataSet();
-            ds = c.buscar();
-            foreach (DataRow reg in ds.Tables[0].Rows)
-                cbolab.Items.Add(reg[1].ToString().Trim());
-
-
-            DataRow r = ds.Tables[0].Rows[0];
-            cbolab.Text = r[1].ToString();
-        }
-
-
-
-        private void btnnuevo_Click(object sender, EventArgs e)
-        {
-            limpiar_text();
-        }
-
-        private void btnguardar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bteliminar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnmodificar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnbuscar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgprov_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-
+            dgprov.DataSource = linq.mostrarProveedor();
         }
 
         private void frmProveedor_Load(object sender, EventArgs e)
         {
+            cargarProveedor();
+        }
 
+        public void Limpiar()
+        {
+            txtnombre.Clear();
+            txtruc.Clear();
+            txtdireccion.Clear();
+            txttelefono.Clear();
+            txtlab.Clear();
+        }
+
+        private void bteliminar_Click(object sender, EventArgs e)
+        {
+            int provee_cod = Convert.ToInt32(dgprov.CurrentRow.Cells[0].Value.ToString());
+            objeto.EliminarProveedor(Convert.ToInt32(provee_cod));
+            cargarProveedor();
+        }
+
+        private void btnmodificar_Click(object sender, EventArgs e)
+        {
+            int provee_cod = Convert.ToInt32(dgprov.CurrentRow.Cells[0].Value.ToString());
+            objeto.ModificarProveedor(Convert.ToInt32(provee_cod),
+            txtnombre.Text,
+            txtruc.Text,
+            txtdireccion.Text,
+            txttelefono.Text);
+            cargarProveedor();
+            Limpiar();
+        }
+
+        private void btnguardar_Click(object sender, EventArgs e)
+        {
+            objeto.AgregarProveedor(txtnombre.Text,
+            txtruc.Text,
+            txtdireccion.Text,
+            txttelefono.Text,
+            Convert.ToInt32(txtlab.Text));
+            cargarProveedor();
+            Limpiar();
+        }
+
+        private void dgprov_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)            {                txtnombre.Text = dgprov.CurrentRow.Cells[1].Value.ToString();                txtruc.Text = dgprov.CurrentRow.Cells[2].Value.ToString();                txtdireccion.Text = dgprov.CurrentRow.Cells[3].Value.ToString();                txttelefono.Text = dgprov.CurrentRow.Cells[4].Value.ToString();                txtlab.Text = dgprov.CurrentRow.Cells[5].Value.ToString();            }
+            else
+            {
+                MessageBox.Show("---");
+                Limpiar();
+            }
+        }
+
+        private void txtbuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtbuscar.Text))
+            {
+                cargarProveedor();
+            }
+            else
+            {
+                var query = from c in linq.tbl_Proveedor where c.prove_nombre.Contains(txtbuscar.Text) select c;
+                dgprov.DataSource = query;
+            }
         }
     }
 }

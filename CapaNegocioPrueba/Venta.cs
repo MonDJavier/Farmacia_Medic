@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace CapaNegocioPrueba
 {
-    public class Venta : CapaDatosPrueba.Class1
+    public class Venta 
     {
         #region Atributos
         private int nro_ven;
@@ -52,23 +52,23 @@ namespace CapaNegocioPrueba
         }
         #endregion
 
-        #region Metodos
-        public void Guardar()
-        {
-            try
-            {
-                PrepararSP("insertarVenta");
-                AddParametro("@fecha", fecha.ToString());
-                AddParametro("@cod_clt", cod_clt.ToString());
-                AddParametro("@ci", cod_emp.ToString());
-                ejecutarSP();
+        //#region Metodos
+        //public void Guardar()
+        //{
+        //    try
+        //    {
+        //        PrepararSP("insertarVenta");
+        //        AddParametro("@fecha", fecha.ToString());
+        //        AddParametro("@cod_clt", cod_clt.ToString());
+        //        AddParametro("@ci", cod_emp.ToString());
+        //        ejecutarSP();
 
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Error al insertar la venta:" + e.ToString());
-            }
-        }
-        #endregion
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        MessageBox.Show("Error al insertar la venta:" + e.ToString());
+        //    }
+        //}
+        //#endregion
     }
 }

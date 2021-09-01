@@ -30,15 +30,10 @@ namespace Farmacia_Medic
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEmpleado));
-            this.txtcodigo = new System.Windows.Forms.TextBox();
-            this.btbuscar = new System.Windows.Forms.Button();
             this.bteliminar = new System.Windows.Forms.Button();
             this.btmodificar = new System.Windows.Forms.Button();
             this.btguardar = new System.Windows.Forms.Button();
-            this.btnuevo = new System.Windows.Forms.Button();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.label9 = new System.Windows.Forms.Label();
+            this.btlimpiar = new System.Windows.Forms.Button();
             this.dgempleado = new System.Windows.Forms.DataGridView();
             this.txtbuscar = new System.Windows.Forms.TextBox();
             this.txttelefono = new System.Windows.Forms.TextBox();
@@ -52,25 +47,10 @@ namespace Farmacia_Medic
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtContra = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgempleado)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtcodigo
-            // 
-            this.txtcodigo.Location = new System.Drawing.Point(33, 444);
-            this.txtcodigo.Name = "txtcodigo";
-            this.txtcodigo.Size = new System.Drawing.Size(126, 20);
-            this.txtcodigo.TabIndex = 126;
-            this.txtcodigo.Visible = false;
-            // 
-            // btbuscar
-            // 
-            this.btbuscar.Location = new System.Drawing.Point(580, 116);
-            this.btbuscar.Name = "btbuscar";
-            this.btbuscar.Size = new System.Drawing.Size(75, 23);
-            this.btbuscar.TabIndex = 125;
-            this.btbuscar.Text = "Buscar";
-            this.btbuscar.UseVisualStyleBackColor = true;
             // 
             // bteliminar
             // 
@@ -80,6 +60,7 @@ namespace Farmacia_Medic
             this.bteliminar.TabIndex = 124;
             this.bteliminar.Text = "Eliminar";
             this.bteliminar.UseVisualStyleBackColor = true;
+            this.bteliminar.Click += new System.EventHandler(this.bteliminar_Click_1);
             // 
             // btmodificar
             // 
@@ -89,6 +70,7 @@ namespace Farmacia_Medic
             this.btmodificar.TabIndex = 123;
             this.btmodificar.Text = "Modificar";
             this.btmodificar.UseVisualStyleBackColor = true;
+            this.btmodificar.Click += new System.EventHandler(this.btmodificar_Click_1);
             // 
             // btguardar
             // 
@@ -98,69 +80,32 @@ namespace Farmacia_Medic
             this.btguardar.TabIndex = 122;
             this.btguardar.Text = "Guardar";
             this.btguardar.UseVisualStyleBackColor = true;
+            this.btguardar.Click += new System.EventHandler(this.btguardar_Click_1);
             // 
-            // btnuevo
+            // btlimpiar
             // 
-            this.btnuevo.Location = new System.Drawing.Point(307, 172);
-            this.btnuevo.Name = "btnuevo";
-            this.btnuevo.Size = new System.Drawing.Size(75, 23);
-            this.btnuevo.TabIndex = 121;
-            this.btnuevo.Text = "Nuevo";
-            this.btnuevo.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton2.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.radioButton2.Location = new System.Drawing.Point(506, 93);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(58, 17);
-            this.radioButton2.TabIndex = 120;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Codigo";
-            this.radioButton2.UseVisualStyleBackColor = false;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton1.Checked = true;
-            this.radioButton1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.radioButton1.Location = new System.Drawing.Point(424, 93);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(62, 17);
-            this.radioButton1.TabIndex = 119;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Nombre";
-            this.radioButton1.UseVisualStyleBackColor = false;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label9.Location = new System.Drawing.Point(304, 92);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(104, 18);
-            this.label9.TabIndex = 118;
-            this.label9.Text = "Buscar por :";
+            this.btlimpiar.Location = new System.Drawing.Point(307, 172);
+            this.btlimpiar.Name = "btlimpiar";
+            this.btlimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btlimpiar.TabIndex = 121;
+            this.btlimpiar.Text = "Limpiar";
+            this.btlimpiar.UseVisualStyleBackColor = true;
             // 
             // dgempleado
             // 
             this.dgempleado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgempleado.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgempleado.BackgroundColor = System.Drawing.Color.Black;
+            this.dgempleado.BackgroundColor = System.Drawing.Color.White;
             this.dgempleado.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgempleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgempleado.GridColor = System.Drawing.SystemColors.InfoText;
-            this.dgempleado.Location = new System.Drawing.Point(33, 243);
+            this.dgempleado.GridColor = System.Drawing.Color.Black;
+            this.dgempleado.Location = new System.Drawing.Point(35, 288);
             this.dgempleado.Name = "dgempleado";
             this.dgempleado.RowHeadersVisible = false;
             this.dgempleado.RowHeadersWidth = 51;
             this.dgempleado.Size = new System.Drawing.Size(620, 196);
             this.dgempleado.TabIndex = 117;
+            this.dgempleado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgempleado_CellClick);
             // 
             // txtbuscar
             // 
@@ -168,6 +113,7 @@ namespace Farmacia_Medic
             this.txtbuscar.Name = "txtbuscar";
             this.txtbuscar.Size = new System.Drawing.Size(257, 20);
             this.txtbuscar.TabIndex = 116;
+            this.txtbuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbuscar_KeyPress);
             // 
             // txttelefono
             // 
@@ -276,21 +222,37 @@ namespace Farmacia_Medic
             this.label1.TabIndex = 105;
             this.label1.Text = "REGISTRO EMPLEADO";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label8.Location = new System.Drawing.Point(14, 224);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(104, 18);
+            this.label8.TabIndex = 128;
+            this.label8.Text = "Contraseña :";
+            // 
+            // txtContra
+            // 
+            this.txtContra.Location = new System.Drawing.Point(123, 224);
+            this.txtContra.Name = "txtContra";
+            this.txtContra.Size = new System.Drawing.Size(155, 20);
+            this.txtContra.TabIndex = 129;
+            // 
             // frmEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(692, 489);
-            this.Controls.Add(this.txtcodigo);
-            this.Controls.Add(this.btbuscar);
+            this.ClientSize = new System.Drawing.Size(692, 526);
+            this.Controls.Add(this.txtContra);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.bteliminar);
             this.Controls.Add(this.btmodificar);
             this.Controls.Add(this.btguardar);
-            this.Controls.Add(this.btnuevo);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.btlimpiar);
             this.Controls.Add(this.dgempleado);
             this.Controls.Add(this.txtbuscar);
             this.Controls.Add(this.txttelefono);
@@ -304,9 +266,10 @@ namespace Farmacia_Medic
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmEmpleado";
             this.Text = "frmEmpleado";
+            this.Load += new System.EventHandler(this.frmEmpleado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgempleado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -314,16 +277,10 @@ namespace Farmacia_Medic
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtcodigo;
-        private System.Windows.Forms.Button btbuscar;
         private System.Windows.Forms.Button bteliminar;
         private System.Windows.Forms.Button btmodificar;
         private System.Windows.Forms.Button btguardar;
-        private System.Windows.Forms.Button btnuevo;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btlimpiar;
         private System.Windows.Forms.DataGridView dgempleado;
         private System.Windows.Forms.TextBox txtbuscar;
         private System.Windows.Forms.TextBox txttelefono;
@@ -337,5 +294,7 @@ namespace Farmacia_Medic
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtContra;
     }
 }

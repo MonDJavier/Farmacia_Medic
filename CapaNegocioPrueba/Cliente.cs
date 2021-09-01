@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace CapaNegocioPrueba
 {
-    public class Cliente : CapaDatosPrueba.Class1
+    public class Cliente 
     {
         private int cod_cliente;
         private string nombre;
@@ -70,68 +70,68 @@ namespace CapaNegocioPrueba
             get { return this.correo; }
             set { this.correo = value; }
         }
-        public void guardar()
-        {
-            try
-            {
-                PrepararSP("insertarCliente");
-                AddParametro("@nombre", nombre);
-                AddParametro("@paterno", paterno);
-                AddParametro("@usuario", usuario);
-                AddParametro("@contraseña", contraseña);
-                AddParametro("@telefono", telefono);
-                AddParametro("@direccion", direccion);
-                AddParametro("@correo", correo);
-                ejecutarSP();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Error al insertar cliente:" + e.ToString());
-            }
-        }
-        public void modificar()
-        {
-            PrepararSP("modificar_cliente");
-            AddParametro("@cod_clt", cod_clt.ToString());
-            AddParametro("@nombre", nombre);
-            AddParametro("@paterno", paterno);
-            AddParametro("@materno", materno);
-            AddParametro("@direccion", direccion);
-            AddParametro("@telefono", telefono);
-            AddParametro("@correo", correo);
-            ejecutarSP();
-        }
+    //    public void guardar()
+    //    {
+    //        try
+    //        {
+    //            PrepararSP("insertarCliente");
+    //            AddParametro("@nombre", nombre);
+    //            AddParametro("@paterno", paterno);
+    //            AddParametro("@usuario", usuario);
+    //            AddParametro("@contraseña", contraseña);
+    //            AddParametro("@telefono", telefono);
+    //            AddParametro("@direccion", direccion);
+    //            AddParametro("@correo", correo);
+    //            ejecutarSP();
+    //        }
+    //        catch (Exception e)
+    //        {
+    //            MessageBox.Show("Error al insertar cliente:" + e.ToString());
+    //        }
+    //    }
+    //    public void modificar()
+    //    {
+    //        PrepararSP("modificar_cliente");
+    //        AddParametro("@cod_clt", cod_clt.ToString());
+    //        AddParametro("@nombre", nombre);
+    //        AddParametro("@paterno", paterno);
+    //        AddParametro("@materno", materno);
+    //        AddParametro("@direccion", direccion);
+    //        AddParametro("@telefono", telefono);
+    //        AddParametro("@correo", correo);
+    //        ejecutarSP();
+    //    }
 
-        public void eliminar()
-        {
-            PrepararSP("eliminarCliente");
-            AddParametro("@cod_clt", cod_cliente.ToString());
-            ejecutarSP();
-        }
-        public DataSet buscar()
-        {
-            string s;
-            s = "select * from cliente";
-            DataSet ds = new DataSet();
-            ejecutarSQL(s, "tc", ds);
-            return ds;
-        }
-        public DataSet buscarPorNombre(string criterio)
-        {
-            string s;
-            s = "select cod_clt,  nombre,paterno ,materno,usuario,contraseña ,direccion, telefono,correo as ID  from cliente where nombre like'" + criterio + "%'";
-            DataSet ds = new DataSet();
-            ejecutarSQL(s, "tc", ds);
-            return ds;
-        }
+    //    public void eliminar()
+    //    {
+    //        PrepararSP("eliminarCliente");
+    //        AddParametro("@cod_clt", cod_cliente.ToString());
+    //        ejecutarSP();
+    //    }
+    //    public DataSet buscar()
+    //    {
+    //        string s;
+    //        s = "select * from cliente";
+    //        DataSet ds = new DataSet();
+    //        ejecutarSQL(s, "tc", ds);
+    //        return ds;
+    //    }
+    //    public DataSet buscarPorNombre(string criterio)
+    //    {
+    //        string s;
+    //        s = "select cod_clt,  nombre,paterno ,materno,usuario,contraseña ,direccion, telefono,correo as ID  from cliente where nombre like'" + criterio + "%'";
+    //        DataSet ds = new DataSet();
+    //        ejecutarSQL(s, "tc", ds);
+    //        return ds;
+    //    }
 
-        public DataSet buscarPorCodigo(string criterio)
-        {
-            string s;
-            s = "select cod_clt,  nombre,paterno ,materno,usuario,contraseña ,direccion, telefono,correo as ID from cliente where cod_clt like'" + criterio + "%'";
-            DataSet ds = new DataSet();
-            ejecutarSQL(s, "tc", ds);
-            return ds;
-        }
+    //    public DataSet buscarPorCodigo(string criterio)
+    //    {
+    //        string s;
+    //        s = "select cod_clt,  nombre,paterno ,materno,usuario,contraseña ,direccion, telefono,correo as ID from cliente where cod_clt like'" + criterio + "%'";
+    //        DataSet ds = new DataSet();
+    //        ejecutarSQL(s, "tc", ds);
+    //        return ds;
+    //    }
     }
 }

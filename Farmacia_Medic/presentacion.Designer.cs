@@ -31,7 +31,7 @@ namespace Farmacia_Medic
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Presentacion));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.btn_Cliente = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -57,7 +57,7 @@ namespace Farmacia_Medic
             this.toolStrip1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("toolStrip1.BackgroundImage")));
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton7,
+            this.btn_Cliente,
             this.toolStripSeparator4,
             this.toolStripButton8,
             this.toolStripSeparator3,
@@ -72,25 +72,26 @@ namespace Farmacia_Medic
             this.toolStripButton2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1096, 58);
+            this.toolStrip1.Size = new System.Drawing.Size(822, 47);
             this.toolStrip1.TabIndex = 15;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton7
+            // btn_Cliente
             // 
-            this.toolStripButton7.AutoSize = false;
-            this.toolStripButton7.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
-            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(80, 50);
-            this.toolStripButton7.Text = "Clientes";
-            this.toolStripButton7.ToolTipText = "Registro de Clientes";
+            this.btn_Cliente.AutoSize = false;
+            this.btn_Cliente.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_Cliente.Image = ((System.Drawing.Image)(resources.GetObject("btn_Cliente.Image")));
+            this.btn_Cliente.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Cliente.Name = "btn_Cliente";
+            this.btn_Cliente.Size = new System.Drawing.Size(80, 50);
+            this.btn_Cliente.Text = "Clientes";
+            this.btn_Cliente.ToolTipText = "Registro de Clientes";
+            this.btn_Cliente.Click += new System.EventHandler(this.btn_Cliente_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 58);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 47);
             // 
             // toolStripButton8
             // 
@@ -102,11 +103,12 @@ namespace Farmacia_Medic
             this.toolStripButton8.Size = new System.Drawing.Size(80, 50);
             this.toolStripButton8.Text = "Empleado";
             this.toolStripButton8.ToolTipText = "Registro de Empleados";
+            this.toolStripButton8.Click += new System.EventHandler(this.toolStripButton8_Click_1);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 58);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 47);
             // 
             // toolStripButton10
             // 
@@ -118,11 +120,12 @@ namespace Farmacia_Medic
             this.toolStripButton10.Size = new System.Drawing.Size(80, 50);
             this.toolStripButton10.Text = "Ventas";
             this.toolStripButton10.ToolTipText = "Registro de Ventas";
+            this.toolStripButton10.Click += new System.EventHandler(this.toolStripButton10_Click_1);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 58);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 47);
             // 
             // toolStripButton1
             // 
@@ -134,11 +137,12 @@ namespace Farmacia_Medic
             this.toolStripButton1.Size = new System.Drawing.Size(80, 50);
             this.toolStripButton1.Text = "Categoria";
             this.toolStripButton1.ToolTipText = "Registro de Ventas";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click_1);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 58);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 47);
             // 
             // toolStripButton3
             // 
@@ -146,13 +150,14 @@ namespace Farmacia_Medic
             this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(125, 55);
+            this.toolStripButton3.Size = new System.Drawing.Size(105, 44);
             this.toolStripButton3.Text = "Medicamento";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click_1);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 58);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 47);
             // 
             // toolStripButton4
             // 
@@ -160,13 +165,14 @@ namespace Farmacia_Medic
             this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(111, 55);
+            this.toolStripButton4.Size = new System.Drawing.Size(92, 44);
             this.toolStripButton4.Text = "Laboratorio";
+            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click_1);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 58);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 47);
             // 
             // toolStripButton2
             // 
@@ -174,8 +180,9 @@ namespace Farmacia_Medic
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(101, 55);
+            this.toolStripButton2.Size = new System.Drawing.Size(85, 44);
             this.toolStripButton2.Text = "Proveedor";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click_1);
             // 
             // label1
             // 
@@ -183,9 +190,10 @@ namespace Farmacia_Medic
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Yellow;
-            this.label1.Location = new System.Drawing.Point(321, 170);
+            this.label1.Location = new System.Drawing.Point(241, 138);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(440, 55);
+            this.label1.Size = new System.Drawing.Size(345, 44);
             this.label1.TabIndex = 16;
             this.label1.Text = "FARMACIA MEDIC";
             // 
@@ -193,8 +201,7 @@ namespace Farmacia_Medic
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(490, 229);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Location = new System.Drawing.Point(368, 186);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(120, 120);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -203,14 +210,15 @@ namespace Farmacia_Medic
             // 
             // Presentacion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1096, 473);
+            this.ClientSize = new System.Drawing.Size(822, 384);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Presentacion";
             this.Text = "Form1";
             this.toolStrip1.ResumeLayout(false);
@@ -224,7 +232,7 @@ namespace Farmacia_Medic
         #endregion
 
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton7;
+        private System.Windows.Forms.ToolStripButton btn_Cliente;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton toolStripButton8;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;

@@ -15,10 +15,14 @@ namespace Farmacia_Medic
 {
     public partial class frmEmpleado : Form
     {
+        DataClasses1DataContext linq = new DataClasses1DataContext();
+        Empleado objeto = new Empleado();
         public frmEmpleado()
         {
             InitializeComponent();
+
         }
+
         public void Limpiar()
         {
             txtdireccion.Clear();
@@ -26,93 +30,74 @@ namespace Farmacia_Medic
             txtmaterno.Clear();
             txttelefono.Clear();
             txtnombre.Clear();
+            txtContra.Clear();
         }
-        void limpiar_text()
+        
+        private void cargarEmpleado()
         {
-            txtcodigo.Text = "";
-            txtnombre.Text = "";
-            txtpaterno.Text = "";
-            txtmaterno.Text = "";
-            txttelefono.Text = "";
-            txtdireccion.Text = "";
+            dgempleado.DataSource = linq.mostrarEmpleado();
         }
 
-        private void btguardar_Click(object sender, EventArgs e)
+        private void frmEmpleado_Load(object sender, EventArgs e)
         {
-            Empleado em = new Empleado();
-            em.Nombre = txtnombre.Text;
-            em.Paterno = txtpaterno.Text;
-            em.Materno = txtmaterno.Text;
-            em.Telefono = txttelefono.Text;
-            em.Direccion = txtdireccion.Text;
-            em.guardar();
+            cargarEmpleado();
+        }
+
+
+        private void btguardar_Click_1(object sender, EventArgs e)
+        {
+            objeto.AgregarEmpleado(txtnombre.Text,
+            txtpaterno.Text,
+            txtmaterno.Text,
+            txtContra.Text,
+            txtdireccion.Text,
+            txttelefono.Text);
+            cargarEmpleado();
             Limpiar();
         }
 
-        private void btbuscar_Click(object sender, EventArgs e)
+        private void btmodificar_Click_1(object sender, EventArgs e)
         {
-            if (radioButton1.Checked)
-            {
-                Empleado c = new Empleado();
-                DataSet ds = new DataSet();
-                ds = c.buscarxNombre(txtbuscar.Text);
-                dgempleado.DataSource = ds;
-                dgempleado.DataMember = "tc";
-            }
-            if (radioButton2.Checked)
-            {
-                Empleado c = new Empleado();
-                DataSet ds = new DataSet();
-                ds = c.buscarPorCodigo(txtbuscar.Text);
-                dgempleado.DataSource = ds;
-                dgempleado.DataMember = "tc";
-            }
-
-
-        }
-
-        private void bteliminar_Click(object sender, EventArgs e)
-        {
-            Empleado c = new Empleado();
-            c.Ci = int.Parse(txtcodigo.Text);
-            c.eliminar();
-            btbuscar_Click(sender, new EventArgs());
-            limpiar_text();
-
-        }
-
-        private void dgempleado_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            DataGridViewSelectedCellCollection cell = dgempleado.SelectedCells;
-            DataGridViewSelectedRowCollection rows = dgempleado.SelectedRows;
-            IEnumerator iter = cell.GetEnumerator(); bool sw = false;
-            while (iter.MoveNext() && !sw)
-            {
-                DataGridViewTextBoxCell dgvtxt = (DataGridViewTextBoxCell)iter.Current;
-                int columna = dgvtxt.ColumnIndex;
-                int fila = dgvtxt.RowIndex;
-                txtcodigo.Text = Convert.ToString(dgempleado[0, fila].Value);
-                txtnombre.Text = Convert.ToString(dgempleado[1, fila].Value);
-                txtpaterno.Text = Convert.ToString(dgempleado[2, fila].Value);
-                txtmaterno.Text = Convert.ToString(dgempleado[3, fila].Value);
-                txtdireccion.Text = Convert.ToString(dgempleado[4, fila].Value);
-                txttelefono.Text = Convert.ToString(dgempleado[5, fila].Value);
-                sw = true;
-            }
-        }
-
-        private void btmodificar_Click(object sender, EventArgs e)
-        {
-            Empleado c = new Empleado();
-            c.Ci = int.Parse(txtcodigo.Text);
-            c.Nombre = txtnombre.Text;
-            c.Paterno = txtpaterno.Text;
-            c.Materno = txtmaterno.Text;
-            c.Direccion = txtdireccion.Text;
-            c.Telefono = txttelefono.Text;
-            c.modificar();
+            int emp_ci = Convert.ToInt32(dgempleado.CurrentRow.Cells[0].Value.ToString());
+            objeto.ModificarEmpleado(txtnombre.Text,
+            txtpaterno.Text,
+            txtmaterno.Text,
+            txtdireccion.Text,
+            txttelefono.Text,
+            txtContra.Text,
+            Convert.ToInt32(emp_ci));
+            cargarEmpleado();
             Limpiar();
-            btbuscar_Click(sender, new EventArgs());
+        }
+
+        private void bteliminar_Click_1(object sender, EventArgs e)
+        {
+            int emp_ci = Convert.ToInt32(dgempleado.CurrentRow.Cells[0].Value.ToString());
+            objeto.EliminarEmpleado(Convert.ToInt32(emp_ci));
+            cargarEmpleado();
+        }
+
+        private void dgempleado_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)            {                txtnombre.Text = dgempleado.CurrentRow.Cells[1].Value.ToString();                txtpaterno.Text = dgempleado.CurrentRow.Cells[2].Value.ToString();                txtmaterno.Text = dgempleado.CurrentRow.Cells[3].Value.ToString();                txtdireccion.Text = dgempleado.CurrentRow.Cells[4].Value.ToString();                txttelefono.Text = dgempleado.CurrentRow.Cells[5].Value.ToString();                txtContra.Text = dgempleado.CurrentRow.Cells[6].Value.ToString();            }
+            else
+            {
+                MessageBox.Show("---");
+                Limpiar();
+            }
+        }
+
+        private void txtbuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtbuscar.Text))
+            {
+                cargarEmpleado();
+            }
+            else
+            {
+                var query = from c in linq.tbl_Empleado where c.emp_nombre.Contains(txtbuscar.Text) select c;
+                dgempleado.DataSource = query;
+            }
         }
     }
 }

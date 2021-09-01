@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaDatosPrueba;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -8,132 +9,29 @@ using System.Windows.Forms;
 
 namespace CapaNegocioPrueba
 {
-    public class Laboratorio : CapaDatosPrueba.Class1
+    public class Laboratorio 
     {
-        #region Atributos
+        DataClasses1DataContext linq = new DataClasses1DataContext();
 
-        private int cod_lab;
-        private string nombre;
-        private string direccion;
-        private string telefono;
-        private string email;
-        private string web;
-
-        #endregion 
-
-
-        #region Constructor
-
-        public Laboratorio()
+        public void MostrarLaboratorio()
         {
-            cod_lab = 0;
-            nombre = direccion = telefono = email = web = string.Empty;
+            linq.mostrarLaboratorio();
         }
 
-        #endregion 
 
-
-        #region Propiedades
-
-        public int Codigo
+        public void AgregarLaboratorio(string lab_nombre, string lab_dirrecion, string lab_telefono, string lab_email, string lab_web)
         {
-            get { return this.cod_lab; }
-            set { this.cod_lab = value; }
+            linq.insertarLaboratorio(lab_nombre,  lab_dirrecion, lab_telefono, lab_email,  lab_web);
+        }
+        public void ModificarLaboratorio(int lab_cod, string lab_nombre, string lab_dirrecion, string lab_telefono, string lab_email, string lab_web)
+        {
+            linq.modificar_laboratorio(lab_cod, lab_nombre, lab_dirrecion, lab_telefono, lab_email, lab_web);
+        }
+        public void EliminarLaboratorio(int lab_cod)
+        {
+            linq.eliminarLaboratorio(Convert.ToInt32(lab_cod));
         }
 
-        public string Nombre
-        {
-            get { return this.nombre; }
-            set { this.nombre = value; }
-        }
 
-        public string Direccion
-        {
-            get { return this.direccion; }
-            set { this.direccion = value; }
-        }
-
-        public string Telefono
-        {
-            get { return this.telefono; }
-            set { this.telefono = value; }
-        }
-
-        public string Email
-        {
-            get { return this.email; }
-            set { this.email = value; }
-        }
-
-        public string Web
-        {
-            get { return this.web; }
-            set { this.web = value; }
-        }
-        #endregion
-
-        #region Metodos
-
-        public void guardar()
-        {
-            try
-            {
-                PrepararSP("insertarLaboratorio");
-                AddParametro("@nombre", nombre);
-                AddParametro("@direccion", direccion);
-                AddParametro("@telefono", telefono);
-                AddParametro("@email", email);
-                AddParametro("@web", web);
-                ejecutarSP();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Error al insertar laboratorio:" + e.ToString());
-            }
-        }
-        public void modificar()
-        {
-            PrepararSP("modificar_laboratorio");
-            AddParametro("@cod_lab", cod_lab.ToString());
-            AddParametro("@nombre", nombre);
-            AddParametro("@direccion", direccion);
-            AddParametro("@telefono", telefono);
-            AddParametro("@email", email);
-            AddParametro("@web", web);
-            ejecutarSP();
-        }
-
-        public void eliminar()
-        {
-            PrepararSP("eliminarLaboratorio");
-            AddParametro("@cod_lab", cod_lab.ToString());
-            ejecutarSP();
-        }
-        public DataSet buscar()
-        {
-            string s;
-            s = "select * from laboratorio";
-            DataSet ds = new DataSet();
-            ejecutarSQL(s, "tc", ds);
-            return ds;
-        }
-        public DataSet buscarPorNombre(string criterio)
-        {
-            string s;
-            s = "select cod_lab,  nombre, direccion, telefono, email, web from laboratorio where nombre like'" + criterio + "%'";
-            DataSet ds = new DataSet();
-            ejecutarSQL(s, "tc", ds);
-            return ds;
-        }
-
-        public DataSet buscarPorCodigo(string criterio)
-        {
-            string s;
-            s = "select cod_lab,  nombre, direccion, telefono,web from laboratorio  where cod_lab like'" + criterio + "%'";
-            DataSet ds = new DataSet();
-            ejecutarSQL(s, "tc", ds);
-            return ds;
-        }
-        #endregion
     }
 }

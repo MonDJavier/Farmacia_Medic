@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaDatosPrueba;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace CapaNegocioPrueba
 {
-    public class Ajuste : CapaDatosPrueba.Class1
+    public class Ajuste
     {
+        DataClasses1DataContext linq = new DataClasses1DataContext();
         #region Atributos
 
         private int cod_ajt;

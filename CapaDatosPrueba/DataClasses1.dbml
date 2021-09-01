@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="bd_farmacia" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-VJ244OG\SQLEXPRESS;Initial Catalog=bd_farmacia;Integrated Security=True" SettingsObjectName="CapaDatosPrueba.Properties.Settings" SettingsPropertyName="bd_farmaciaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_Ajuste" Member="tbl_Ajuste">
+    <Type Name="tbl_Ajuste">
+      <Column Name="ajt_cod" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ajt_fecha" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ajt_observacion" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_Ajuste_tbl_detalleAjuste" Member="tbl_detalleAjuste" ThisKey="ajt_cod" OtherKey="ajt_cod" Type="tbl_detalleAjuste" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Categoria" Member="tbl_Categoria">
+    <Type Name="tbl_Categoria">
+      <Column Name="cat_cod" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cat_nombre" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_Categoria_tbl_Medicamento" Member="tbl_Medicamento" ThisKey="cat_cod" OtherKey="cat_cod" Type="tbl_Medicamento" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Cliente" Member="tbl_Cliente">
+    <Type Name="tbl_Cliente">
+      <Column Name="cli_cod" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cli_nombre" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="cli_paterno" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="cli_materno" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="cli_direccion" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="cli_telefono" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="cli_correo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="tbl_Cliente_tbl_Venta" Member="tbl_Venta" ThisKey="cli_cod" OtherKey="cli_cod" Type="tbl_Venta" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Compra" Member="tbl_Compra">
+    <Type Name="tbl_Compra">
+      <Column Name="com_cod" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cod_fecha" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="prove_cod" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="emp_ci" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_Compra_tbl_detalleCompra" Member="tbl_detalleCompra" ThisKey="com_cod" OtherKey="com_cod" Type="tbl_detalleCompra" />
+      <Association Name="tbl_Empleado_tbl_Compra" Member="tbl_Empleado" ThisKey="emp_ci" OtherKey="emp_ci" Type="tbl_Empleado" IsForeignKey="true" />
+      <Association Name="tbl_Proveedor_tbl_Compra" Member="tbl_Proveedor" ThisKey="prove_cod" OtherKey="prove_cod" Type="tbl_Proveedor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_detalleAjuste" Member="tbl_detalleAjuste">
+    <Type Name="tbl_detalleAjuste">
+      <Column Name="ajt_cod" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="med_cod" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="daj_cantidad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_Ajuste_tbl_detalleAjuste" Member="tbl_Ajuste" ThisKey="ajt_cod" OtherKey="ajt_cod" Type="tbl_Ajuste" IsForeignKey="true" />
+      <Association Name="tbl_Medicamento_tbl_detalleAjuste" Member="tbl_Medicamento" ThisKey="med_cod" OtherKey="med_cod" Type="tbl_Medicamento" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_detalleCompra" Member="tbl_detalleCompra">
+    <Type Name="tbl_detalleCompra">
+      <Column Name="com_cod" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="med_cod" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="dco_cantidad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dco_costo" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_Compra_tbl_detalleCompra" Member="tbl_Compra" ThisKey="com_cod" OtherKey="com_cod" Type="tbl_Compra" IsForeignKey="true" />
+      <Association Name="tbl_Medicamento_tbl_detalleCompra" Member="tbl_Medicamento" ThisKey="med_cod" OtherKey="med_cod" Type="tbl_Medicamento" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_detalleVenta" Member="tbl_detalleVenta">
+    <Type Name="tbl_detalleVenta">
+      <Column Name="ven_nrov" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="med_cod" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="dve_cantidad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dve_precio" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_Medicamento_tbl_detalleVenta" Member="tbl_Medicamento" ThisKey="med_cod" OtherKey="med_cod" Type="tbl_Medicamento" IsForeignKey="true" />
+      <Association Name="tbl_Venta_tbl_detalleVenta" Member="tbl_Venta" ThisKey="ven_nrov" OtherKey="ven_nrov" Type="tbl_Venta" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Empleado" Member="tbl_Empleado">
+    <Type Name="tbl_Empleado">
+      <Column Name="emp_ci" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="emp_nombre" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="emp_paterno" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="emp_materno" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="emp_direccion" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="emp_telefono" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="emp_contraseña" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="emp_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Association Name="tbl_Empleado_tbl_Compra" Member="tbl_Compra" ThisKey="emp_ci" OtherKey="emp_ci" Type="tbl_Compra" />
+      <Association Name="tbl_Empleado_tbl_Venta" Member="tbl_Venta" ThisKey="emp_ci" OtherKey="emp_cod" Type="tbl_Venta" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Laboratorio" Member="tbl_Laboratorio">
+    <Type Name="tbl_Laboratorio">
+      <Column Name="lab_cod" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="lab_nombre" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="lab_direccion" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="lab_telefono" Type="System.String" DbType="Char(12) NOT NULL" CanBeNull="false" />
+      <Column Name="lab_email" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="lab_web" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Association Name="tbl_Laboratorio_tbl_Proveedor" Member="tbl_Proveedor" ThisKey="lab_cod" OtherKey="lab_cod" Type="tbl_Proveedor" />
+      <Association Name="tbl_Laboratorio_tbl_Ubicacion" Member="tbl_Ubicacion" ThisKey="lab_cod" OtherKey="lab_cod" Type="tbl_Ubicacion" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Medicamento" Member="tbl_Medicamento">
+    <Type Name="tbl_Medicamento">
+      <Column Name="med_cod" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="med_nombre" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="med_precio" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="med_foto" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="med_stock" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cat_cod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tbl_Medicamento_tbl_detalleAjuste" Member="tbl_detalleAjuste" ThisKey="med_cod" OtherKey="med_cod" Type="tbl_detalleAjuste" />
+      <Association Name="tbl_Medicamento_tbl_detalleCompra" Member="tbl_detalleCompra" ThisKey="med_cod" OtherKey="med_cod" Type="tbl_detalleCompra" />
+      <Association Name="tbl_Medicamento_tbl_detalleVenta" Member="tbl_detalleVenta" ThisKey="med_cod" OtherKey="med_cod" Type="tbl_detalleVenta" />
+      <Association Name="tbl_Medicamento_tbl_Ubicacion" Member="tbl_Ubicacion" ThisKey="med_cod" OtherKey="med_cod" Type="tbl_Ubicacion" />
+      <Association Name="tbl_Categoria_tbl_Medicamento" Member="tbl_Categoria" ThisKey="cat_cod" OtherKey="cat_cod" Type="tbl_Categoria" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Proveedor" Member="tbl_Proveedor">
+    <Type Name="tbl_Proveedor">
+      <Column Name="prove_cod" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="prove_nombre" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="prove_nit" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="prove_direccion" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="prove_telefono" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="lab_cod" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_Proveedor_tbl_Compra" Member="tbl_Compra" ThisKey="prove_cod" OtherKey="prove_cod" Type="tbl_Compra" />
+      <Association Name="tbl_Laboratorio_tbl_Proveedor" Member="tbl_Laboratorio" ThisKey="lab_cod" OtherKey="lab_cod" Type="tbl_Laboratorio" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Ubicacion" Member="tbl_Ubicacion">
+    <Type Name="tbl_Ubicacion">
+      <Column Name="med_cod" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="lab_cod" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="tbl_Laboratorio_tbl_Ubicacion" Member="tbl_Laboratorio" ThisKey="lab_cod" OtherKey="lab_cod" Type="tbl_Laboratorio" IsForeignKey="true" />
+      <Association Name="tbl_Medicamento_tbl_Ubicacion" Member="tbl_Medicamento" ThisKey="med_cod" OtherKey="med_cod" Type="tbl_Medicamento" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Venta" Member="tbl_Venta">
+    <Type Name="tbl_Venta">
+      <Column Name="ven_nrov" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ven_fecha" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="cli_cod" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="emp_cod" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_Venta_tbl_detalleVenta" Member="tbl_detalleVenta" ThisKey="ven_nrov" OtherKey="ven_nrov" Type="tbl_detalleVenta" />
+      <Association Name="tbl_Cliente_tbl_Venta" Member="tbl_Cliente" ThisKey="cli_cod" OtherKey="cli_cod" Type="tbl_Cliente" IsForeignKey="true" />
+      <Association Name="tbl_Empleado_tbl_Venta" Member="tbl_Empleado" ThisKey="emp_cod" OtherKey="emp_ci" Type="tbl_Empleado" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.eliminarCategoria" Method="eliminarCategoria">
+    <Parameter Name="cat_cod" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminarCliente" Method="eliminarCliente">
+    <Parameter Name="cli_cod" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminarEmpleado" Method="eliminarEmpleado">
+    <Parameter Name="emp_ci" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminarLaboratorio" Method="eliminarLaboratorio">
+    <Parameter Name="lab_cod" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminarMedicamento" Method="eliminarMedicamento">
+    <Parameter Name="med_cod" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminarProveedor" Method="eliminarProveedor">
+    <Parameter Name="prove_cod" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertarCategoria" Method="insertarCategoria">
+    <Parameter Name="cat_nombre" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertarCliente" Method="insertarCliente">
+    <Parameter Name="cli_nombre" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="cli_paterno" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="cli_materno" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="cli_direccion" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="cli_telefono" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="cli_correo" Type="System.String" DbType="VarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertarDetalleVenta" Method="insertarDetalleVenta">
+    <Parameter Name="med_cod" Type="System.Int32" DbType="Int" />
+    <Parameter Name="dve_precio" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="dve_cantidad" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertarEmpleado" Method="insertarEmpleado">
+    <Parameter Name="emp_nombre" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="emp_paterno" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="emp_materno" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="emp_direccion" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="emp_telefono" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="emp_contraseña" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertarLaboratorio" Method="insertarLaboratorio">
+    <Parameter Name="lab_nombre" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="lab_direccion" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="lab_telefono" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="lab_email" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="lab_web" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertarProveedor" Method="insertarProveedor">
+    <Parameter Name="prove_nombre" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="prove_nit" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="prove_direccion" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prove_telefono" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="lab_cod" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertarVenta" Method="insertarVenta">
+    <Parameter Name="ven_fecha" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="cli_cod" Type="System.Int32" DbType="Int" />
+    <Parameter Name="emp_ci" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.modificar_cliente" Method="modificar_cliente">
+    <Parameter Name="cli_cod" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cli_nombre" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="cli_paterno" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="cli_materno" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="cli_direccion" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="cli_telefono" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="cli_correo" Type="System.String" DbType="VarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.modificar_laboratorio" Method="modificar_laboratorio">
+    <Parameter Name="lab_cod" Type="System.Int32" DbType="Int" />
+    <Parameter Name="lab_nombre" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="lab_direccion" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="lab_telefono" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="lab_email" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="lab_web" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.modificarCategoria" Method="modificarCategoria">
+    <Parameter Name="cat_cod" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cat_nombre" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.modificarEmpleado" Method="modificarEmpleado">
+    <Parameter Name="emp_ci" Type="System.Int32" DbType="Int" />
+    <Parameter Name="emp_nombre" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="emp_paterno" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="emp_materno" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="emp_direccion" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="emp_telefono" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="emp_contraseña" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.modificarProveedor" Method="modificarProveedor">
+    <Parameter Name="prove_cod" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prove_nombre" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prove_nit" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="prove_direccion" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prove_telefono" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.mostrarEmpleado" Method="mostrarEmpleado">
+    <ElementType Name="mostrarEmpleadoResult">
+      <Column Name="emp_ci" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="emp_nombre" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="emp_paterno" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="emp_materno" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="emp_direccion" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="emp_telefono" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="emp_contraseña" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="emp_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.mostrarMedicamentos" Method="mostrarMedicamentos">
+    <ElementType Name="mostrarMedicamentosResult">
+      <Column Name="med_cod" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="med_nombre" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="med_precio" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="med_foto" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" />
+      <Column Name="med_stock" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cat_cod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.insertarMedicamento" Method="insertarMedicamento">
+    <Parameter Name="med_nombre" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="med_precio" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="med_stock" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cat_cod" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.modificarMedicamento" Method="modificarMedicamento">
+    <Parameter Name="med_cod" Type="System.Int32" DbType="Int" />
+    <Parameter Name="med_nombre" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="med_precio" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="med_stock" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cat_cod" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.mostrarLaboratorio" Method="mostrarLaboratorio">
+    <ElementType Name="mostrarLaboratorioResult">
+      <Column Name="lab_cod" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="lab_nombre" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="lab_direccion" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="lab_telefono" Type="System.String" DbType="Char(12) NOT NULL" CanBeNull="false" />
+      <Column Name="lab_email" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="lab_web" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.mostrarProveedor" Method="mostrarProveedor">
+    <ElementType Name="mostrarProveedorResult">
+      <Column Name="prove_cod" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="prove_nombre" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="prove_nit" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="prove_direccion" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="prove_telefono" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="lab_cod" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

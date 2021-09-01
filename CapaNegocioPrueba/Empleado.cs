@@ -1,6 +1,8 @@
-﻿using System;
+﻿using CapaDatosPrueba;
+using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,132 +10,29 @@ using System.Windows.Forms;
 
 namespace CapaNegocioPrueba
 {
-    public class Empleado : CapaDatosPrueba.Class1
+    public class Empleado 
     {
-        #region Atributos
+        DataClasses1DataContext linq = new DataClasses1DataContext();
 
-        private int ci;
-        private string nombre;
-        private string paterno;
-        private string materno;
-        private string usuario;
-        private string contraseña;
-        private string telefono;
-        private string direccion;
-
-        #endregion
-
-        #region Constructor
-        public int Ci
+        public void MostrarEmpleado()
         {
-            get { return this.ci; }
-            set { this.ci = value; }
-        }
-
-        public string Nombre
-        {
-            get { return this.nombre; }
-            set { this.nombre = value; }
-        }
-
-        public string Paterno
-        {
-            get { return this.paterno; }
-            set { this.paterno = value; }
-        }
-
-        public string Materno
-        {
-            get { return this.materno; }
-            set { this.materno = value; }
-        }
-        public string Usuario
-        {
-            get { return this.usuario; }
-            set { this.usuario = value; }
-        }
-        public string Contraseña
-        {
-            get { return this.contraseña; }
-            set { this.contraseña = value; }
-        }
-
-        public string Direccion
-        {
-            get { return this.direccion; }
-            set { this.direccion = value; }
-        }
-
-        public string Telefono
-        {
-            get { return this.telefono; }
-            set { this.telefono = value; }
+            linq.mostrarEmpleado();
         }
 
 
-        #endregion 
-
-        public void guardar()
+        public void AgregarEmpleado(string emp_nombre, string emp_paterno, string emp_materno, string emp_direccion, string emp_telefono, string emp_contraseña)
         {
-            try
-            {
-                PrepararSP("insertarEmpleado");
-                AddParametro("@nombre", this.nombre);
-                AddParametro("@paterno", this.paterno);
-                AddParametro("@materno", this.materno);
-                AddParametro("@usuario", this.usuario);
-                AddParametro("@contraseña", this.contraseña);
-                AddParametro("@telefono", this.telefono);
-                AddParametro("@direccion", this.direccion);
-                ejecutarSP();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Error al insertar Empleado:" + e.ToString());
-            }
+            linq.insertarEmpleado( emp_nombre,emp_paterno,  emp_materno,  emp_direccion, emp_telefono, emp_contraseña);
         }
-        public void modificar()
+        public void ModificarEmpleado(string emp_nombre, string emp_paterno, string emp_materno, string emp_direccion, string emp_telefono, string emp_contraseña, int emp_ci)
         {
-            PrepararSP("modificarEmpleado");
-            AddParametro("@ci", ci.ToString());
-            AddParametro("@nombre", nombre);
-            AddParametro("@paterno", paterno);
-            AddParametro("@materno", materno);
-            AddParametro("@direccion", direccion);
-            AddParametro("@telefono", telefono);
-            ejecutarSP();
+            linq.modificarEmpleado(emp_ci , emp_nombre, emp_paterno,  emp_materno,  emp_direccion, emp_telefono, emp_contraseña);
         }
-
-        public void eliminar()
+        public void EliminarEmpleado(int emp_ci)
         {
-            PrepararSP("eliminarEmpleado");
-            AddParametro("@ci", ci.ToString());
-            ejecutarSP();
+            linq.eliminarEmpleado(Convert.ToInt32(emp_ci));
         }
-        public DataSet buscar()
-        {
-            string s;
-            s = "select * from empleado";
-            DataSet ds = new DataSet();
-            ejecutarSQL(s, "tc", ds);
-            return ds;
-        }
-        public DataSet buscarxNombre(string criterio)
-        {
-            string s;
-            s = "select ci,nombre,paterno ,materno ,direccion, telefono from empleado where nombre like '" + criterio + "%'";
-            DataSet ds = new DataSet();
-            ejecutarSQL(s, "tc", ds);
-            return ds;
-        }
-
-        public DataSet buscarPorCodigo(string criterio)
-        {
-            string s;
-            s = "select ci,  nombre,paterno ,materno ,direccion, telefono from empleado where empleado like'" + criterio + "%'";
-            DataSet ds = new DataSet();
-            ejecutarSQL(s, "tc", ds);
-            return ds;
-        }
+        
+        
     }
 }

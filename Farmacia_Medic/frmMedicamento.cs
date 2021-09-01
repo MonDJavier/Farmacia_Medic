@@ -8,62 +8,85 @@ using System.Text;
 using System.Windows.Forms;
 using CapaNegocioPrueba;
 using System.IO;
+using CapaDatosPrueba;
 
 namespace Farmacia_Medic
 {
     public partial class frmMedicamento : Form
     {
+        DataClasses1DataContext linq = new DataClasses1DataContext();
+        Medicamento med = new Medicamento();
         public frmMedicamento()
         {
             InitializeComponent();
         }
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            System.IO.MemoryStream ms = new System.IO.MemoryStream();
-            ImgCli.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-            Medicamento med = new Medicamento();
-            med.Nombre = txtNombre.Text;
-            med.Cod_categoria = int.Parse(txtCategoria.Text);
-            med.Stock = int.Parse(txtStock.Text);
-            med.Precio = double.Parse(txtPrecio.Text);
-            ms.GetBuffer();
-            med.guardar();
+            med.AgregarMedicamento(txtNombre.Text,
+            Convert.ToDecimal(txtPrecio.Text),
+            Convert.ToInt32(txtCategoria.Text),
+            Convert.ToInt32(txtStock.Text));
+            cargarMedicamento();
+            Limpiar();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btn_Modificar_Click(object sender, EventArgs e)
         {
-            Medicamento c = new Medicamento();
-            DataSet ds = new DataSet();
-            ds = c.buscarPorNombre(txtBuscar.Text);
-            dataGridView1.DataSource = ds;
-            dataGridView1.DataMember = "tm";
+            int med_cod = Convert.ToInt32(dgv_medicamentos.CurrentRow.Cells[0].Value.ToString());
+            med.ModificarMedicamento(Convert.ToInt32(med_cod),
+            txtNombre.Text,
+            Convert.ToDecimal(txtPrecio.Text),
+            Convert.ToInt32(txtStock.Text),
+            Convert.ToInt32(txtCategoria.Text));
+            cargarMedicamento();
+            Limpiar();
         }
 
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        private void btn_eliminar_Click(object sender, EventArgs e)
         {
-            Medicamento p = new Medicamento();
-            DataSet ds = new DataSet();
-            ds = p.buscarPorNombre(txtBuscar.Text);
-            dataGridView1.DataSource = ds;
-            dataGridView1.DataMember = "tm";
-
+            int med_cod = Convert.ToInt32(dgv_medicamentos.CurrentRow.Cells[0].Value.ToString());
+            med.EliminarMedicamento(Convert.ToInt32(med_cod));
+            cargarMedicamento();
         }
 
-        private void btn_foto_Click(object sender, EventArgs e)
+        private void frmMedicamento_Load(object sender, EventArgs e)
         {
-            OpenFileDialog fo = new OpenFileDialog();
-            DialogResult rs = fo.ShowDialog();
-            if (rs == DialogResult.OK)
+            cargarMedicamento();
+        }
+
+        private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtBuscar.Text))
             {
-                ImgCli.Image = Image.FromFile(fo.FileName);
+                cargarMedicamento();
+            }
+            else
+            {
+                var query = from c in linq.tbl_Medicamento where c.med_nombre.Contains(txtBuscar.Text) select c;
+                dgv_medicamentos.DataSource = query;
             }
         }
+        public void Limpiar()
+        {
+            txtNombre.Clear();
+            txtPrecio.Clear();
+            txtCategoria.Clear();
+            txtStock.Clear();
+        }
+        private void cargarMedicamento()
+        {
+            dgv_medicamentos.DataSource = linq.mostrarMedicamentos ();
+        }
 
-      
+        private void dgv_medicamentos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)            {                txtNombre.Text = dgv_medicamentos.CurrentRow.Cells[1].Value.ToString();                txtCategoria.Text = dgv_medicamentos.CurrentRow.Cells[2].Value.ToString();                txtStock.Text = dgv_medicamentos.CurrentRow.Cells[3].Value.ToString();                txtPrecio.Text = dgv_medicamentos.CurrentRow.Cells[4].Value.ToString();            }
+            else
+            {
+                MessageBox.Show("---");
+                Limpiar();
+            }
+        }
     }
 }

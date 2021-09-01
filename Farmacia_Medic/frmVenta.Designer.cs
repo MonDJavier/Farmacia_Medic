@@ -30,7 +30,6 @@ namespace Farmacia_Medic
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVenta));
-            this.txtCat = new System.Windows.Forms.TextBox();
             this.txtCodEmpleado = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cobCategoria = new System.Windows.Forms.ComboBox();
@@ -42,41 +41,30 @@ namespace Farmacia_Medic
             this.txtMedicamento = new System.Windows.Forms.TextBox();
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.Imprimir = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dgvDetallVenta = new System.Windows.Forms.DataGridView();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnNuevo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvMedicamento = new System.Windows.Forms.DataGridView();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDetallVenta)).BeginInit();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dgvDetallVenta = new System.Windows.Forms.DataGridView();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicamento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetallVenta)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtCat
-            // 
-            this.txtCat.Enabled = false;
-            this.txtCat.Location = new System.Drawing.Point(560, 24);
-            this.txtCat.Name = "txtCat";
-            this.txtCat.Size = new System.Drawing.Size(42, 20);
-            this.txtCat.TabIndex = 54;
             // 
             // txtCodEmpleado
             // 
             this.txtCodEmpleado.Enabled = false;
-            this.txtCodEmpleado.Location = new System.Drawing.Point(224, 86);
+            this.txtCodEmpleado.Location = new System.Drawing.Point(212, 86);
             this.txtCodEmpleado.Name = "txtCodEmpleado";
-            this.txtCodEmpleado.Size = new System.Drawing.Size(42, 20);
+            this.txtCodEmpleado.Size = new System.Drawing.Size(54, 20);
             this.txtCodEmpleado.TabIndex = 53;
             this.txtCodEmpleado.Visible = false;
             // 
@@ -129,7 +117,7 @@ namespace Farmacia_Medic
             this.txtCodCliente.Enabled = false;
             this.txtCodCliente.Location = new System.Drawing.Point(137, 86);
             this.txtCodCliente.Name = "txtCodCliente";
-            this.txtCodCliente.Size = new System.Drawing.Size(42, 20);
+            this.txtCodCliente.Size = new System.Drawing.Size(55, 20);
             this.txtCodCliente.TabIndex = 48;
             this.txtCodCliente.Visible = false;
             // 
@@ -179,27 +167,6 @@ namespace Farmacia_Medic
             this.label6.TabIndex = 43;
             this.label6.Text = "Medicamento:";
             // 
-            // Imprimir
-            // 
-            this.Imprimir.Location = new System.Drawing.Point(509, 210);
-            this.Imprimir.Name = "Imprimir";
-            this.Imprimir.Size = new System.Drawing.Size(75, 23);
-            this.Imprimir.TabIndex = 42;
-            this.Imprimir.Text = "Imprimir";
-            this.Imprimir.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Black;
-            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Chartreuse;
-            this.label5.Location = new System.Drawing.Point(239, 401);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(171, 23);
-            this.label5.TabIndex = 41;
-            this.label5.Text = "DETALLE DE VENTA";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -236,29 +203,9 @@ namespace Farmacia_Medic
             this.label2.TabIndex = 38;
             this.label2.Text = "Fecha";
             // 
-            // dgvDetallVenta
-            // 
-            this.dgvDetallVenta.BackgroundColor = System.Drawing.Color.Black;
-            this.dgvDetallVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDetallVenta.Location = new System.Drawing.Point(40, 441);
-            this.dgvDetallVenta.Name = "dgvDetallVenta";
-            this.dgvDetallVenta.RowHeadersWidth = 51;
-            this.dgvDetallVenta.Size = new System.Drawing.Size(544, 137);
-            this.dgvDetallVenta.TabIndex = 37;
-            this.dgvDetallVenta.Visible = false;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(416, 210);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 36;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(323, 210);
+            this.btnEliminar.Location = new System.Drawing.Point(276, 210);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 35;
@@ -267,7 +214,7 @@ namespace Farmacia_Medic
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(230, 210);
+            this.btnModificar.Location = new System.Drawing.Point(149, 210);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 34;
@@ -276,21 +223,12 @@ namespace Farmacia_Medic
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(137, 210);
+            this.btnGuardar.Location = new System.Drawing.Point(44, 210);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 33;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Location = new System.Drawing.Point(44, 210);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
-            this.btnNuevo.TabIndex = 32;
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -306,7 +244,7 @@ namespace Farmacia_Medic
             // 
             // dgvMedicamento
             // 
-            this.dgvMedicamento.BackgroundColor = System.Drawing.Color.Black;
+            this.dgvMedicamento.BackgroundColor = System.Drawing.Color.White;
             this.dgvMedicamento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMedicamento.Location = new System.Drawing.Point(42, 242);
             this.dgvMedicamento.Name = "dgvMedicamento";
@@ -331,24 +269,43 @@ namespace Farmacia_Medic
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 55;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // textBox1
+            // label5
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(-2, 1);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(48, 20);
-            this.textBox1.TabIndex = 56;
-            this.textBox1.Visible = false;
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Black;
+            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Chartreuse;
+            this.label5.Location = new System.Drawing.Point(239, 401);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(171, 23);
+            this.label5.TabIndex = 41;
+            this.label5.Text = "DETALLE DE VENTA";
+            // 
+            // dgvDetallVenta
+            // 
+            this.dgvDetallVenta.BackgroundColor = System.Drawing.Color.White;
+            this.dgvDetallVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetallVenta.Location = new System.Drawing.Point(40, 441);
+            this.dgvDetallVenta.Name = "dgvDetallVenta";
+            this.dgvDetallVenta.RowHeadersWidth = 51;
+            this.dgvDetallVenta.Size = new System.Drawing.Size(544, 137);
+            this.dgvDetallVenta.TabIndex = 37;
+            this.dgvDetallVenta.Visible = false;
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(384, 210);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(200, 20);
+            this.txtBuscar.TabIndex = 56;
             // 
             // frmVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(650, 590);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.txtCat);
+            this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.txtCodEmpleado);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cobCategoria);
@@ -360,35 +317,30 @@ namespace Farmacia_Medic
             this.Controls.Add(this.txtMedicamento);
             this.Controls.Add(this.txtCliente);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.Imprimir);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvDetallVenta);
-            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvMedicamento);
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmVenta";
             this.Text = "frmVentas";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDetallVenta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicamento)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetallVenta)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtCat;
         private System.Windows.Forms.TextBox txtCodEmpleado;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cobCategoria;
@@ -400,21 +352,18 @@ namespace Farmacia_Medic
         private System.Windows.Forms.TextBox txtMedicamento;
         private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button Imprimir;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dgvDetallVenta;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvMedicamento;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView dgvDetallVenta;
+        private System.Windows.Forms.TextBox txtBuscar;
     }
 }
